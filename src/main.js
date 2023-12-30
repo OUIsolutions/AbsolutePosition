@@ -45,6 +45,8 @@ function processarElementos() {
                 
                 let measures  = SantosDummont_parser(attribute,browser_width,browser_height);
                 let closest = SantosDummont_find_closest_measure(measures,browser_width,browser_height);
+                console.log(closest);
+
                 let dimensions = closest.dimensions;
                 let previews_element = element.previousElementSibling;
                 element.style.position = 'absolute';

@@ -70,3 +70,29 @@ function SantosDummont_find_closest_measure(measures, browser_width, browser_hei
 
     return closest;
 }
+/**
+ *  @param {number} value
+ *  @param {string} measure
+ *  @param {number}browser_width
+ *  @param {number} browser_height
+ *  @return {number}
+ * */
+function SantosDummontConvertMeasure(value,measure,browser_width,browser_height){
+    let final_value = value;
+    if(measure === '%'){
+        final_value = (value/100)*browser_width;
+    }
+    if(measure === 'vh'){
+        final_value = (value/100)*browser_height;
+    }
+    if(measure === 'vw'){
+        final_value = (value/100)*browser_width;
+    }
+    if(measure === 'px'){
+        final_value = value;
+    }
+
+    return Number(final_value);
+
+
+}
