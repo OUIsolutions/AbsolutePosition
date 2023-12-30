@@ -30,11 +30,11 @@ function  SantosDummont_add_brother_props(element,measures,name,previews_element
         let previews_value = previews_rect[name];
 
         if(operator === '+'){
-                previews_value -=father_value;
+                previews_value -= father_value;
         }
+        
         if(operator === '-'){
-                previews_value +=father_value;
-
+                previews_value += father_value;
         }
 
 
