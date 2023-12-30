@@ -48,6 +48,12 @@ function SantosDummont_generate_divided_number(value,browser_width,browser_heigh
     }
 
     let measure = measure_list.join('');
+    
+    if(measure === ''){
+        measure = '%';
+    }
+    
+
     let final_string_num = new_num_string.join('');
     let num = parseInt(final_string_num);
 
@@ -56,7 +62,7 @@ function SantosDummont_generate_divided_number(value,browser_width,browser_heigh
         number:num,
         operator:operator
     }
-    
+
     console.log(result);
 
     
