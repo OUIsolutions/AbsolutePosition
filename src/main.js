@@ -28,7 +28,7 @@ function  SantosDummont_add_brother_props(element,measures,name,previews_element
 
         let pixel_value = value;
         if(measure === '%'){
-
+                console.log(pixel_value)
                 let father = element.parentElement;
                 let father_rect = father.getBoundingClientRect();
                 let father_value = undefined;
@@ -43,8 +43,7 @@ function  SantosDummont_add_brother_props(element,measures,name,previews_element
 
                 let fraction =(father_value/100);
                 pixel_value = (fraction * pixel_value);
-                console.log(pixel_value);
-      
+
         }
 
 
