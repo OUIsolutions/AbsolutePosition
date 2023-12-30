@@ -27,10 +27,25 @@ function SantosDummont_convert_aspect_ratio(width,height){
 
 /**
  * @param {Array<SantosDummontProp>} measures
- * @param {number}width
- * @param {number}heigth
+ * @param {number}browser_width
+ * @param {number}browser_height
  * @return {SantosDummontProp}
  * **/
-function  SantosDummont_find_closes_measure(measures,width,heigth){
-
+function SantosDummont_find_closest_measure(measures, browser_width, browser_height) {
+    let closest = measures[0];
+    let browser_ratio = SantosDummont_convert_aspect_ratio(browser_width, browser_height);
+    let closest_distance = Math.abs(browser_ratio.width - closest.horizontal_ratio) + Math.abs(browser_ratio.height - closest.vertical_ratio);
+    
+    for (let measure of measures) {
+        let width = measure.horizontal_ratio;
+        let height = measure.vertical_ratio;
+        let distance = Math.abs(browser_ratio.width - width) + Math.abs(browser_ratio.height - height);
+        
+        if (distance < closest_distance) {
+            closest = measure;
+            closest_distance = distance;
+        }
+    }
+    
+    return closest;
 }
