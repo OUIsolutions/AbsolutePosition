@@ -1,6 +1,6 @@
 /**
  * @typedef SantosDummontDimension
- * @property {number} pixel_value
+ * @property {number} value
  * @property {string} measure
  * @property {string} operator
  * */
@@ -96,7 +96,7 @@ function SantosDummont_generate_divided_number(value){
     let num = parseInt(final_string_num);
     return {
         measure:dimensions,
-        pixel_value:num,
+        value:num,
         operator:operator
     }
         

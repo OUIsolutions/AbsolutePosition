@@ -43,9 +43,9 @@ function processarElementos() {
                 let browser_height = window.innerHeight;
         
                 
-                let measures  = SantosDummont_parser(attribute,browser_width,browser_height);
+                let measures  = SantosDummont_parser(attribute);
                 let closest = SantosDummont_find_closest_measure(measures,browser_width,browser_height);
-                console.log(closest);
+                console.log(measures);
 
                 let dimensions = closest.dimensions;
                 let previews_element = element.previousElementSibling;
@@ -63,7 +63,7 @@ function processarElementos() {
 
 function  start(){
         processarElementos();
-        function handleMutation(mutations) {
+        function handleMutation() {
                 processarElementos();
         }
         //set an  listener for change dimensions
