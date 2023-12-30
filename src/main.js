@@ -23,6 +23,11 @@ function  start(){
         function handleMutation(mutations) {
                 processarElementos();
         }
+        //set an  listener for change dimensions
+        window.addEventListener('resize', function(){
+                processarElementos();
+        });
+        
         const observer = new MutationObserver(handleMutation);
         const config = { childList: true, subtree: true };
         observer.observe(document.body, config);
