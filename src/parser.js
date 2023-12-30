@@ -24,19 +24,19 @@
 
 /**
  * @param {Array} element
- * @param {number} width
- * @param {number} height
+ * @param {number} horizontal_ratio
+ * @param {number} vertical_ratio
  * @return {SantosDummontProp}
  * */
-function find_or_create_dimension(element,width,height){
+function find_or_create_dimension(element,horizontal_ratio,vertical_ratio){
     for(let current of element){
-        if(current.width === width && current.height === height){
+        if(current.width === horizontal_ratio && current.height === height){
             return current;
         }
     }
     let created = {
-        horizontal_ratio:height,
-        vertical_ratio:width,
+        horizontal_ratio:horizontal_ratio,
+        vertical_ratio:vertical_ratio,
         dimensions:undefined
     };
 
