@@ -8,7 +8,7 @@
  * @param {height} height
  * @return {SantosDummontAspectRatio}
  * */
-function convert_aspect_ratio(width,height){
+function SantosDummont_convert_aspect_ratio(width,height){
     //convert 1920x1080 to 16x9
     let aspect_ratio = width/height;
     let width_ratio = 1;
@@ -23,4 +23,14 @@ function convert_aspect_ratio(width,height){
         width:width_ratio,
         height:height_ratio
     };
+}
+
+/**
+ * @param {Array<SantosDummontProp>} measures
+ * @param {number}width
+ * @param {number}heigth
+ * @return {SantosDummontProp}
+ * **/
+function  SantosDummont_find_closes_measure(measures,width,heigth){
+
 }
