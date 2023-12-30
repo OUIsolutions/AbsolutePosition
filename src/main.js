@@ -3,18 +3,20 @@
 function processarElementos() {
         let elementosRefer = document.querySelectorAll('[stantosDummont]');
 
-
         elementosRefer.forEach(elemento => {
                 let attribute = elemento.getAttribute('stantosDummont');
                 let browser_width = window.innerWidth;
                 let browser_height = window.innerHeight;
                 let parsed  = SantosDummont_parser(attribute,browser_width,browser_height);
+
                 console.log(parsed);
-                const irmaoMaisNovo = elemento.nextElementSibling;
-                if (irmaoMaisNovo) {
-                        irmaoMaisNovo.classList.add('alguma-classe');
+
+                const old_brother = elemento.nextElementSibling;
+                if (old_brother) {
+                       
                 }
         });
+
 }
 
 
