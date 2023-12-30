@@ -27,7 +27,10 @@ function  SantosDummont_add_brother_props(element,measures,name,previews_element
 
         let pixel_value = value;
         if(measure === '%'){
-                pixel_value = (pixel_value/100)*previews_value;
+                let father = element.parentNode;
+                let father_rect = father.getBoundingClientRect();
+                let father_value = father_rect[name];
+                pixel_value = (pixel_value/100)*father_value;
         }
         if(measure === 'vh'){
                 pixel_value = (pixel_value/100)*browser_height;
