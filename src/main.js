@@ -21,15 +21,21 @@ function  SantosDummont_add_brother_props(element,measures,name,previews_element
                 return;
         }
 
+
+
+        let father = element.parentNode;
+        let father_rect = father.getBoundingClientRect();
+        let father_value = father_rect[name];
+
         let previews_rect = previews_element.getBoundingClientRect();
         /**@type {number}*/
         let previews_value = previews_rect[name];
 
+        previews_value -=father_value;
+
+
         let pixel_value = value;
         if(measure === '%'){
-                let father = element.parentNode;
-                let father_rect = father.getBoundingClientRect();
-                let father_value = father_rect[name];
                 pixel_value = (pixel_value/100)*father_value;
         }
         if(measure === 'vh'){
@@ -49,6 +55,8 @@ function  SantosDummont_add_brother_props(element,measures,name,previews_element
                 pixel_value-=previews_value;
         }
 
+        console.log(name);
+        console.log(pixel_value);
         element.style[name] = pixel_value + 'px' ;
 
 

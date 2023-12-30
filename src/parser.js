@@ -56,6 +56,7 @@ function SantosDummont_generate_divided_number(value){
     let num_string = '';
     let operator = undefined;
     const VALID_OPERATORS = ['+','-'];
+
     let passed_operator = VALID_OPERATORS.includes(value[0]);
 
     if(passed_operator){
