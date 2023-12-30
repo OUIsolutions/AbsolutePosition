@@ -15,9 +15,15 @@ function  SantosDummont_add_brother_props(element,measures,name,brother){
                 element.style[name] = pixel_value + 'px';
                 return;
         }
-        
-        if(operator === '+'){
+        //get the width of the brother
+        let brother_rect = brother.getBoundingClientRect();
+        let brother_value = brother_rect[name];
 
+        if(operator === '+'){
+                pixel_value = brother_value + pixel_value;  
+        }
+        if(operator === '-'){
+                pixel_value = brother_value - pixel_value;  
         }
 
         element.style[name] = pixel_value + 'px';
