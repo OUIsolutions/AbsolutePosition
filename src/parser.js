@@ -75,15 +75,19 @@ function SantosDummont_generate_divided_number(value){
     let num_found = false;
     for(let current of reverted_num_string){
 
-        if(!isNaN(current)){
+        let VALID_CHARS = ['.','0','1','2','3','4','5','6','7','8','9'];
+        
+        if(VALID_CHARS.includes(current)){
             num_found = true;
         }
+
         if(!num_found){
             dimensions_list.unshift(current);
         }
         if(num_found){
             new_num_string.unshift(current);
         }
+
     }
 
     let dimensions = dimensions_list.join('');
@@ -94,7 +98,7 @@ function SantosDummont_generate_divided_number(value){
     
 
     let final_string_num = new_num_string.join('');
-    let num = parseInt(final_string_num);
+    let num = Number(final_string_num);
     return {
         measure:dimensions,
         value:num,
