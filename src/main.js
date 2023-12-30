@@ -11,8 +11,7 @@ function processarElementos() {
                 
                 let measures  = SantosDummont_parser(attribute,browser_width,browser_height);
                 let closest = SantosDummont_find_closest_measure(measures,browser_width,browser_height);
-                console.log("c",closest);
-
+                
                 const old_brother = elemento.nextElementSibling;
                 if (old_brother) {
                        

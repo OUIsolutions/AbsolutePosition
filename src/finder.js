@@ -30,21 +30,42 @@ function SantosDummont_convert_aspect_ratio(width,height){
 }
 
 /**
+ * @param {number} elemenet1
+ * @param {number} element2
+ * @return {number}
+ */
+function SantosDummont_returns_diference(elemenet1,element2){
+   if(elemenet1 >= element2) {
+       return elemenet1 - element2;
+   }
+   return  element2 - elemenet1;
+}
+/**
  * @param {Array<SantosDummontProp>} measures
  * @param {number}browser_width
  * @param {number}browser_height
  * @return {SantosDummontProp}
  * **/
 function SantosDummont_find_closest_measure(measures, browser_width, browser_height) {
-    let closest = measures[0];
+    let closest = undefined;
+    let closest_dif = undefined;
     let browser_ratio = SantosDummont_convert_aspect_ratio(browser_width, browser_height);
     for(let measure of measures){
         let measure_ratio = SantosDummont_convert_aspect_ratio(measure.horizontal_ratio, measure.vertical_ratio);
-        //calculate the difference between the browser and the measure
-        if(measure_ratio.is_horizontal === browser_ratio.is_horizontal){
+        let width_dif = SantosDummont_returns_diference(measure_ratio.width,browser_ratio.width);
+        let heighest_dif = SantosDummont_returns_diference(measure_ratio.height,browser_ratio.height);
+        let dif = width_dif+heighest_dif;
+        if(closest_dif=== undefined){
             closest = measure;
+            closest_dif = dif;
+        }
+
+        if(dif <= closest_dif){
+            closest = measure;
+            closest_dif = dif;
         }
 
     }
+
     return closest;
 }
