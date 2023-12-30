@@ -1,9 +1,9 @@
 /**
  * @typedef {object} SantosDummontAspectRatio
  * @property {number} width
- * @param {number} height
- * @param {boolean} is_horizontal
- * @param {boolean} is_vertical
+ * @property {number} height
+ * @property {boolean} is_horizontal
+ * @property {boolean} is_vertical
  * */
 /**
  * @param {number} width
@@ -40,10 +40,10 @@ function SantosDummont_find_closest_measure(measures, browser_width, browser_hei
     let browser_ratio = SantosDummont_convert_aspect_ratio(browser_width, browser_height);
     for(let measure of measures){
         let measure_ratio = SantosDummont_convert_aspect_ratio(measure.horizontal_ratio, measure.vertical_ratio);
-        if(browser_ratio.is_horizontal === measure_ratio.is_horizontal){
+        //calculate the difference between the browser and the measure
+        if(measure_ratio.is_horizontal === browser_ratio.is_horizontal){
             closest = measure;
         }
-
 
     }
     return closest;
