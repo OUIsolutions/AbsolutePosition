@@ -1,10 +1,16 @@
 /**
- *@typedef {object} SantosDummontDimension
- * @property {number} left
- * @property {number} heigth
- * @property {number} width
- * @property {number} height
+ * @typedef SantosDummontDimension
+ * @property {number} pixel_value
  * @property {string} operator
+ * */
+
+
+/**
+ *@typedef {object} SantosDummontDimensions
+ * @property {SantosDummontDimension} left
+ * @property {SantosDummontDimension} heigth
+ * @property {SantosDummontDimension} width
+ * @property {SantosDummontDimension} height
  * */
 
 
@@ -12,7 +18,7 @@
  * @typedef {object} SantosDummontProp
  * @property {number} horizontal_ratio
  * @property {number} vertical_ratio
- * @property {SantosDummontDimension} props
+ * @property {SantosDummontDimensions} dimensions
  * */
 
 
@@ -31,7 +37,7 @@ function find_or_create_dimension(element,width,height){
     let created = {
         horizontal_ratio:height,
         vertical_ratio:width,
-        props:undefined
+        dimensions:undefined
     };
 
     element.unshift(created);
@@ -40,7 +46,11 @@ function find_or_create_dimension(element,width,height){
 
 }
 /**
- *
+ *  @param {number} value
+ *  @param {string} measure
+ *  @param {number}browser_width
+ *  @param {number} browser_height
+ *  @return {number}
  * */
 function SantosDummontConvertMeasure(value,measure,browser_width,browser_height){
     let final_value = value;
@@ -57,13 +67,14 @@ function SantosDummontConvertMeasure(value,measure,browser_width,browser_height)
         final_value = value;
     }
 
-    return final_value;
+    return Number(final_value);
 
 
 }/**
  @param {string} value
  @param {number} browser_width
  @param {number} browser_height
+ @return {SantosDummontDimension}
  */
 function SantosDummont_generate_divided_number(value,browser_width,browser_height){
 
@@ -87,6 +98,7 @@ function SantosDummont_generate_divided_number(value,browser_width,browser_heigh
     let new_num_string = [];
     let num_found = false;
     for(let current of reverted_num_string){
+
         if(!isNaN(current)){
             num_found = true;
         }
@@ -134,7 +146,7 @@ function  SantosDummont_generate_measure(final_array,current,browser_width,brows
     numbers = numbers.replaceAll('(','').replaceAll(')','');
     let divided_numbers = numbers.split(',');
 
-    created.props = {
+    created.dimensions = {
         left:SantosDummont_generate_divided_number(divided_numbers[0],browser_width,browser_height),
         top:SantosDummont_generate_divided_number(divided_numbers[1],browser_width,browser_height),
         width:SantosDummont_generate_divided_number(divided_numbers[2],browser_width,browser_height),
