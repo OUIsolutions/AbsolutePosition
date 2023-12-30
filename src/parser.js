@@ -12,8 +12,25 @@ function find_or_create_dimension(element,width,height){
     return created;
 
 }
+function SantosDummontConvertMeasure(value,measure,browser_width,browser_height){
+    let final_value = value;
+    if(measure === '%'){
+        final_value = (value/100)*browser_width;
+    }
+    if(measure === 'vh'){
+        final_value = (value/100)*browser_height;
+    }
+    if(measure === 'vw'){
+        final_value = (value/100)*browser_width;
+    }
+    if(measure === 'px'){
+        final_value = value;
+    }
+
+    return final_value;
 
 
+}
 function SantosDummont_generate_divided_number(value,browser_width,browser_height){
 
     let num_string = '';
@@ -56,17 +73,12 @@ function SantosDummont_generate_divided_number(value,browser_width,browser_heigh
 
     let final_string_num = new_num_string.join('');
     let num = parseInt(final_string_num);
-
-    let result = {
-        measure:measure,
+    let converted_measure = SantosDummontConvertMeasure(num,measure,browser_width,browser_height);
+    return {
+        measure:converted_measure,
         number:num,
         operator:operator
     }
-
-    console.log(result);
-
-    
-
         
 
 }
@@ -82,10 +94,14 @@ function  SantosDummont_generate_measure(final_array,current,browser_width,brows
     let numbers = division[1];
     numbers = numbers.replaceAll('(','').replaceAll(')','');
     let divided_numbers = numbers.split(',');
-    
-    created.left = SantosDummont_generate_divided_number(divided_numbers[0],browser_width,browser_height);
-    
+    created.measures = {
+        left:SantosDummont_generate_divided_number(divided_numbers[0],browser_width,browser_height),
+        top:SantosDummont_generate_divided_number(divided_numbers[1],browser_width,browser_height),
+        width:SantosDummont_generate_divided_number(divided_numbers[2],browser_width,browser_height),
+        height:SantosDummont_generate_divided_number(divided_numbers[3],browser_width,browser_height)
+    }
 }
+
 
 
 function  SantosDummont_parser(value,browser_width,browser_height){
@@ -97,4 +113,5 @@ function  SantosDummont_parser(value,browser_width,browser_height){
         elements.forEach(current=>{
             SantosDummont_generate_measure(final_array,current,browser_width,browser_height)
         })
+        return final_array;
 }
