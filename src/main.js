@@ -51,6 +51,13 @@ function  SantosDummont_add_brother_props(element,measures,name,previews_element
                 pixel_value = (pixel_value/100)*browser_width;
         }
 
+        //get the width of the brother
+        if(operator === '+'){
+                pixel_value+=previews_value;
+        }
+        if(operator === '-'){
+                pixel_value-=previews_value;
+        }
 
         console.log(name);
         console.log(pixel_value);
