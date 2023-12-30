@@ -21,8 +21,6 @@ function  SantosDummont_add_brother_props(element,measures,name,previews_element
                 return;
         }
 
-
-
         let father = element.parentNode;
         let father_rect = father.getBoundingClientRect();
         let father_value = father_rect[name];
@@ -31,13 +29,21 @@ function  SantosDummont_add_brother_props(element,measures,name,previews_element
         /**@type {number}*/
         let previews_value = previews_rect[name];
 
-        previews_value -=father_value;
+        if(operator === '+'){
+                previews_value -=father_value;
+        }
+        if(operator === '-'){
+                previews_value +=father_value;
+
+        }
+
 
 
         let pixel_value = value;
         if(measure === '%'){
                 pixel_value = (pixel_value/100)*father_value;
         }
+
         if(measure === 'vh'){
                 pixel_value = (pixel_value/100)*browser_height;
         }
@@ -45,15 +51,6 @@ function  SantosDummont_add_brother_props(element,measures,name,previews_element
                 pixel_value = (pixel_value/100)*browser_width;
         }
 
-        //get the width of the brother
-
-
-        if(operator === '+'){
-                pixel_value+=previews_value;
-        }
-        if(operator === '-'){
-                pixel_value-=previews_value;
-        }
 
         console.log(name);
         console.log(pixel_value);
