@@ -33,11 +33,11 @@ function  SantosDummont_add_brother_props(element,measures,name,previews_element
                 let father_rect = father.getBoundingClientRect();
                 let father_value = undefined;
 
-                if(name ==='left'){
+                if(name ==='left' || name === 'width'){
                         father_value = father_rect.width;
                 }
 
-                if(name === 'top'){
+                if(name === 'top' || name === 'height'){
                         father_value = father_rect.height;
                 }
 
