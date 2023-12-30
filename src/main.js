@@ -1,5 +1,30 @@
 
+/**
+ * @param {HTMLElement} element
+ * @param {SantosDummontDimensions} measures
+ * @param {string} name
+ * @param {HTMLElement} brother
+ *
+ * */
+function  SantosDummont_add_brother_props(element,measures,name,brother){
+        /**@type {SantosDummontDimension}*/
+        let current_measure = measures[name];
+        let pixel_value  =current_measure.pixel_value;
+        let operator = current_measure.operator;
+        if(!brother || !operator){
+                element.style[name] = pixel_value + 'px';
+                return;
+        }
+        
+        if(operator === '+'){
 
+        }
+
+        element.style[name] = pixel_value + 'px';
+
+
+
+}
 function processarElementos() {
         let elementosRefer = document.querySelectorAll('[stantosDummont]');
 
@@ -13,25 +38,10 @@ function processarElementos() {
                 let closest = SantosDummont_find_closest_measure(measures,browser_width,browser_height);
                 let dimensions = closest.dimensions;
                 const old_brother = element.nextElementSibling;
-                element.style.posit
-                if(!old_brother){
-                        element.style.left = dimensions.left.pixel_value + 'px';
-                        element.style.top = dimensions.top.pixel_value + 'px';
-                        element.style.width = dimensions.width.pixel_value + 'px';
-                        element.style.height = dimensions.height.pixel_value + 'px';
-                        return;
-                }
-
-
-                
-                if (old_brother) {
-                        console.log(closest);
-                        element.style.left = dimensions.left.pixel_value + 'px';
-                        element.style.top = dimensions.top.pixel_value + 'px';
-                        element.style.width = dimensions.width.pixel_value + 'px';
-                        element.style.height = dimensions.height.pixel_value + 'px';
-                
-                }
+                SantosDummont_add_brother_props(element, dimensions,"left",old_brother);
+                SantosDummont_add_brother_props(element,dimensions,"top",old_brother);
+                SantosDummont_add_brother_props(element,dimensions,"width",old_brother);
+                SantosDummont_add_brother_props(element,dimensions,"height",old_brother);
 
         });
 
