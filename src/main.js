@@ -3,27 +3,28 @@
  * @param {HTMLElement} element
  * @param {SantosDummontDimensions} measures
  * @param {string} name
- * @param {HTMLElement} brother
+ * @param {HTMLElement} previews_element
  *
  * */
-function  SantosDummont_add_brother_props(element,measures,name,brother){
+function  SantosDummont_add_brother_props(element,measures,name,previews_element){
         /**@type {SantosDummontDimension}*/
         let current_measure = measures[name];
         let pixel_value  =current_measure.pixel_value;
         let operator = current_measure.operator;
-        if(!brother || !operator){
+        if(!previews_element || !operator){
                 element.style[name] = pixel_value + 'px';
                 return;
         }
         //get the width of the brother
-        let brother_rect = brother.getBoundingClientRect();
-        let brother_value = brother_rect[name];
+
+        let previews_rect = previews_element.getBoundingClientRect();
+        let previews_value = previews_rect[name];
 
         if(operator === '+'){
-                pixel_value = brother_value + pixel_value;  
+                pixel_value = previews_value + pixel_value;
         }
         if(operator === '-'){
-                pixel_value = brother_value - pixel_value;  
+                pixel_value = previews_value - pixel_value;
         }
 
         element.style[name] = pixel_value + 'px';
@@ -35,6 +36,8 @@ function processarElementos() {
         let elementosRefer = document.querySelectorAll('[stantosDummont]');
 
         elementosRefer.forEach(element => {
+
+
                 let attribute = element.getAttribute('stantosDummont');
                 let browser_width = window.innerWidth;
                 let browser_height = window.innerHeight;
@@ -43,11 +46,13 @@ function processarElementos() {
                 let measures  = SantosDummont_parser(attribute,browser_width,browser_height);
                 let closest = SantosDummont_find_closest_measure(measures,browser_width,browser_height);
                 let dimensions = closest.dimensions;
-                const old_brother = element.nextElementSibling;
-                SantosDummont_add_brother_props(element, dimensions,"left",old_brother);
-                SantosDummont_add_brother_props(element,dimensions,"top",old_brother);
-                SantosDummont_add_brother_props(element,dimensions,"width",old_brother);
-                SantosDummont_add_brother_props(element,dimensions,"height",old_brother);
+                let previews_element = element.previousElementSibling;
+                element.style.position = 'absolute';
+
+                SantosDummont_add_brother_props(element, dimensions,"left",previews_element);
+                SantosDummont_add_brother_props(element,dimensions,"top",previews_element);
+                SantosDummont_add_brother_props(element,dimensions,"width",previews_element);
+                SantosDummont_add_brother_props(element,dimensions,"height",previews_element);
 
         });
 
