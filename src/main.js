@@ -9,8 +9,8 @@ function processarElementos() {
                 let browser_height = window.innerHeight;
         
                 
-                let parsed  = SantosDummont_parser(attribute,browser_width,browser_height);
-                let closest = SantosDummont_find_closest_measure(parsed.measures,browser_width,browser_height);
+                let measures  = SantosDummont_parser(attribute,browser_width,browser_height);
+                let closest = SantosDummont_find_closest_measure(measures,browser_width,browser_height);
                 console.log(closest);
 
                 const old_brother = elemento.nextElementSibling;
