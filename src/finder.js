@@ -37,9 +37,9 @@ function SantosDummont_find_closest_measure(measures, browser_width, browser_hei
     let closest_distance = Math.abs(browser_ratio.width - closest.horizontal_ratio) + Math.abs(browser_ratio.height - closest.vertical_ratio);
     
     for (let measure of measures) {
-        let width = measure.horizontal_ratio;
-        let height = measure.vertical_ratio;
-        let distance = Math.abs(browser_ratio.width - width) + Math.abs(browser_ratio.height - height);
+        let measure_ratio = SantosDummont_convert_aspect_ratio(measure.dimensions.width, measure.dimensions.height);
+        let distance = Math.abs(browser_ratio.width - measure_ratio.width) + Math.abs(browser_ratio.height - measure_ratio.height);
+
         
         if (distance < closest_distance) {
             closest = measure;

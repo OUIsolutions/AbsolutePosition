@@ -7,9 +7,11 @@ function processarElementos() {
                 let attribute = elemento.getAttribute('stantosDummont');
                 let browser_width = window.innerWidth;
                 let browser_height = window.innerHeight;
+        
+                
                 let parsed  = SantosDummont_parser(attribute,browser_width,browser_height);
-
-                console.log(parsed);
+                let closest = SantosDummont_find_closest_measure(parsed.measures,browser_width,browser_height);
+                console.log(closest);
 
                 const old_brother = elemento.nextElementSibling;
                 if (old_brother) {
