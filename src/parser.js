@@ -142,7 +142,7 @@ function  absolute_position_parser(value){
         /**@type {Array<AbsolutePositionProp>}*/
         let final_array = [];
         let formatted_value = value.replaceAll(" ","");
-        let elements = formatted_value.split('$');
+        let elements = formatted_value.split(ABSOLUTE_POSITION_START_CHAR);
         elements = elements.filter(v => v !== '');
         elements.forEach(current=>{
             absolute_position_generate_measure(final_array,current)
