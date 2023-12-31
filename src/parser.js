@@ -51,13 +51,12 @@ function absolute_position_find_or_create_dimension(element, horizontal_ratio, v
 
  @return {SantosDummontDimension}
  */
-function absolute_poisition_generate_divided_number(value){
+function absolute_position_generate_divided_number(value){
 
-    let num_string = '';
+    let num_string = ABSOLUTE_POSITION_EMPTY_STRING;
     let operator = undefined;
-    const VALID_OPERATORS = ['+','-'];
 
-    let passed_operator = VALID_OPERATORS.includes(value[0]);
+    let passed_operator = ABSOLUTE_POSITION_VALID_OPERATORS.includes(value[0]);
 
     if(passed_operator){
         operator = value[0];
@@ -69,15 +68,14 @@ function absolute_poisition_generate_divided_number(value){
 
 
     //revert num_string
-    let reverted_num_string = num_string.split('').reverse();
+    let reverted_num_string = num_string.split(ABSOLUTE_POSITION_EMPTY_STRING).reverse();
     let dimensions_list = [];
     let new_num_string = [];
     let num_found = false;
     for(let current of reverted_num_string){
 
-        let VALID_CHARS = ['.','0','1','2','3','4','5','6','7','8','9'];
         
-        if(VALID_CHARS.includes(current)){
+        if(ABSOLUTE_POSITION_VALID_NUMS.includes(current)){
             num_found = true;
         }
 
@@ -90,14 +88,14 @@ function absolute_poisition_generate_divided_number(value){
 
     }
 
-    let dimensions = dimensions_list.join('');
+    let dimensions = dimensions_list.join(ABSOLUTE_POSITION_EMPTY_STRING);
     
-    if(dimensions === ''){
-        dimensions = '%';
+    if(dimensions === ABSOLUTE_POSITION_EMPTY_STRING){
+        dimensions = ABSOLUTE_POSITION_PERCENT;
     }
     
 
-    let final_string_num = new_num_string.join('');
+    let final_string_num = new_num_string.join(ABSOLUTE_POSITION_EMPTY_STRING);
     let num = Number(final_string_num);
     return {
         measure:dimensions,
@@ -115,21 +113,25 @@ function absolute_poisition_generate_divided_number(value){
 
  * */
 function  absolute_position_generate_measure(final_array, current){
-    let division = current.split('(');
+    let division = current.split(ABSOLUTE_POSITION_LEFT_PARENTESIS);
     let dimensions_raw = division[0];
-    let divided_dimensions = dimensions_raw.split(':');
+    let divided_dimensions = dimensions_raw.split(ABSOLUTE_POSITION_ASPECT_RATION_SEPARATOR);
     let horizontal_ration = Number(divided_dimensions[0]);
     let vertical_ratio = Number(divided_dimensions[1]);
     let created = absolute_position_find_or_create_dimension(final_array,horizontal_ration,vertical_ratio);
     let numbers = division[1];
-    numbers = numbers.replaceAll('(','').replaceAll(')','');
-    let divided_numbers = numbers.split(',');
+    numbers = numbers
+        .replaceAll(ABSOLUTE_POSITION_LEFT_PARENTESIS,ABSOLUTE_POSITION_EMPTY_STRING)
+        .replaceAll(ABSOLUTE_POSITION_RIGHT_PARENTESIS,ABSOLUTE_POSITION_EMPTY_STRING);
+
+
+    let divided_numbers = numbers.split(ABSOLUTE_POSITION_MEASURE_DIVIDER);
 
     created.dimensions = {
-        left:absolute_poisition_generate_divided_number(divided_numbers[0]),
-        top:absolute_poisition_generate_divided_number(divided_numbers[1]),
-        width:absolute_poisition_generate_divided_number(divided_numbers[2]),
-        height:absolute_poisition_generate_divided_number(divided_numbers[3])
+        left:absolute_position_generate_divided_number(divided_numbers[0]),
+        top:absolute_position_generate_divided_number(divided_numbers[1]),
+        width:absolute_position_generate_divided_number(divided_numbers[2]),
+        height:absolute_position_generate_divided_number(divided_numbers[3])
     }
 }
 
@@ -141,9 +143,9 @@ function  absolute_position_generate_measure(final_array, current){
 function  absolute_position_parser(value){
         /**@type {Array<AbsolutePositionProp>}*/
         let final_array = [];
-        let formatted_value = value.replaceAll(" ","");
+        let formatted_value = value.replaceAll(ABSOLUTE_POSITION_SPACE,ABSOLUTE_POSITION_EMPTY_STRING);
         let elements = formatted_value.split(ABSOLUTE_POSITION_START_CHAR);
-        elements = elements.filter(v => v !== '');
+        elements = elements.filter(v => v !== ABSOLUTE_POSITION_EMPTY_STRING);
         elements.forEach(current=>{
             absolute_position_generate_measure(final_array,current)
         })

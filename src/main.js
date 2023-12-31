@@ -33,11 +33,11 @@ function  absolute_position_generate_measures(element, measures, name, previews_
                 let father_rect = father.getBoundingClientRect();
                 let father_value = undefined;
 
-                if(HORIZONTAL_DIRECTIONS.includes(name)){
+                if(ABSOLUTE_POSITION_HORIZONTAL_DIRECTIONS.includes(name)){
                         father_value = father_rect.width;
                 }
 
-                if(VERTICAL_DIRECTIONS.includes(name)){
+                if(ABSOLUTE_POSITION_VERTICAL_DIRECTIONS.includes(name)){
                         father_value = father_rect.height;
                 }
 
