@@ -7,7 +7,7 @@
 
 
 /**
- *@typedef {object} SantosDummontDimensions
+ *@typedef {object} AbsolutePositionDimensions
  * @property {SantosDummontDimension} left
  * @property {SantosDummontDimension} heigth
  * @property {SantosDummontDimension} width
@@ -16,10 +16,10 @@
 
 
 /**
- * @typedef {object} SantosDummontProp
+ * @typedef {object} AbsolutePositionProp
  * @property {number} horizontal_ratio
  * @property {number} vertical_ratio
- * @property {SantosDummontDimensions} dimensions
+ * @property {AbsolutePositionDimensions} dimensions
  * */
 
 
@@ -27,9 +27,9 @@
  * @param {Array} element
  * @param {number} horizontal_ratio
  * @param {number} vertical_ratio
- * @return {SantosDummontProp}
+ * @return {AbsolutePositionProp}
  * */
-function find_or_create_dimension(element,horizontal_ratio,vertical_ratio){
+function absolute_position_find_or_create_dimension(element, horizontal_ratio, vertical_ratio){
     for(let current of element){
         if(current.width === horizontal_ratio && current.height === vertical_ratio){
             return current;
@@ -51,7 +51,7 @@ function find_or_create_dimension(element,horizontal_ratio,vertical_ratio){
 
  @return {SantosDummontDimension}
  */
-function SantosDummont_generate_divided_number(value){
+function absolute_poisition_generate_divided_number(value){
 
     let num_string = '';
     let operator = undefined;
@@ -110,42 +110,42 @@ function SantosDummont_generate_divided_number(value){
 
 
 /**
- * @param {Array<SantosDummontProp>} final_array
+ * @param {Array<AbsolutePositionProp>} final_array
  * @param {string} current
 
  * */
-function  SantosDummont_generate_measure(final_array,current){
+function  absolute_position_generate_measure(final_array, current){
     let division = current.split('(');
     let dimensions_raw = division[0];
     let divided_dimensions = dimensions_raw.split(':');
     let horizontal_ration = Number(divided_dimensions[0]);
     let vertical_ratio = Number(divided_dimensions[1]);
-    let created = find_or_create_dimension(final_array,horizontal_ration,vertical_ratio);
+    let created = absolute_position_find_or_create_dimension(final_array,horizontal_ration,vertical_ratio);
     let numbers = division[1];
     numbers = numbers.replaceAll('(','').replaceAll(')','');
     let divided_numbers = numbers.split(',');
 
     created.dimensions = {
-        left:SantosDummont_generate_divided_number(divided_numbers[0]),
-        top:SantosDummont_generate_divided_number(divided_numbers[1]),
-        width:SantosDummont_generate_divided_number(divided_numbers[2]),
-        height:SantosDummont_generate_divided_number(divided_numbers[3])
+        left:absolute_poisition_generate_divided_number(divided_numbers[0]),
+        top:absolute_poisition_generate_divided_number(divided_numbers[1]),
+        width:absolute_poisition_generate_divided_number(divided_numbers[2]),
+        height:absolute_poisition_generate_divided_number(divided_numbers[3])
     }
 }
 
 
 /**
  * @param {string} value
- * @return {Array<SantosDummontProp>}
+ * @return {Array<AbsolutePositionProp>}
  * */
-function  SantosDummont_parser(value){
-        /**@type {Array<SantosDummontProp>}*/
+function  absolute_position_parser(value){
+        /**@type {Array<AbsolutePositionProp>}*/
         let final_array = [];
         let formatted_value = value.replaceAll(" ","");
         let elements = formatted_value.split('$');
         elements = elements.filter(v => v !== '');
         elements.forEach(current=>{
-            SantosDummont_generate_measure(final_array,current)
+            absolute_position_generate_measure(final_array,current)
         })
         return final_array;
 }

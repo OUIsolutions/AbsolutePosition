@@ -1,14 +1,14 @@
 
 /**
  * @param {HTMLElement} element
- * @param {SantosDummontDimensions} measures
+ * @param {AbsolutePositionDimensions} measures
  * @param {string} name
  * @param {HTMLElement} previews_element
  * @param {number} browser_width
  * @param {number} browser_height
  *
  * */
-function  SantosDummont_add_brother_props(element,measures,name,previews_element,browser_width,browser_height){
+function  absolute_position_generate_measures(element, measures, name, previews_element, browser_width, browser_height){
         /**@type {SantosDummontDimension}*/
         let current_measure = measures[name];
         let value  =current_measure.value;
@@ -69,7 +69,7 @@ function  SantosDummont_add_brother_props(element,measures,name,previews_element
 
 
 }
-function processarElementos() {
+function absolute_position_processElements() {
         let elementosRefer = document.querySelectorAll('[stantosDummont]');
 
         elementosRefer.forEach(element => {
@@ -80,31 +80,31 @@ function processarElementos() {
                 let browser_height = window.innerHeight;
         
                 
-                let measures  = SantosDummont_parser(attribute);
-                let closest = SantosDummont_find_closest_measure(measures,browser_width,browser_height);
+                let measures  = absolute_position_parser(attribute);
+                let closest = absolute_position_find_closest_measure(measures,browser_width,browser_height);
 
                 let dimensions = closest.dimensions;
                 let previews_element = element.previousElementSibling;
                 element.style.position = 'absolute';
 
-                SantosDummont_add_brother_props(element, dimensions,"left",previews_element,browser_width,browser_height);
-                SantosDummont_add_brother_props(element,dimensions,"top",previews_element,browser_width,browser_height);
-                SantosDummont_add_brother_props(element,dimensions,"width",previews_element,browser_width,browser_height);
-                SantosDummont_add_brother_props(element,dimensions,"height",previews_element,browser_width,browser_height);
+                absolute_position_generate_measures(element, dimensions,"left",previews_element,browser_width,browser_height);
+                absolute_position_generate_measures(element,dimensions,"top",previews_element,browser_width,browser_height);
+                absolute_position_generate_measures(element,dimensions,"width",previews_element,browser_width,browser_height);
+                absolute_position_generate_measures(element,dimensions,"height",previews_element,browser_width,browser_height);
 
         });
 
 }
 
 
-function  start(){
-        processarElementos();
+function  absolute_position_start(){
+        absolute_position_processElements();
         function handleMutation() {
-                processarElementos();
+                absolute_position_processElements();
         }
         //set an  listener for change dimensions
         window.addEventListener('resize', function(){
-                processarElementos();
+                absolute_position_processElements();
         });
         
         const observer = new MutationObserver(handleMutation);
@@ -112,4 +112,4 @@ function  start(){
         observer.observe(document.body, config);
 }
 
-window.onload = start;
+window.onload = absolute_position_start;
