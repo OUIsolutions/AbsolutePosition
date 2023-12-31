@@ -106,5 +106,5 @@ function  absolute_position_start(){
 
 }
 
-
-window.onload = absolute_position_start;
+//add an document listener for window laod 
+window.addEventListener(ABSOLUTE_POSITION_DOM_LOAD,absolute_position_start);
