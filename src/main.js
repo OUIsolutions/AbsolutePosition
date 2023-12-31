@@ -27,17 +27,17 @@ function  absolute_position_generate_measures(element, measures, name, previews_
 
 
         let pixel_value = value;
-        if(measure === '%'){
+        if(measure === ABSOLUTE_POSITION_PERCENT){
                 console.log(pixel_value)
                 let father = element.parentElement;
                 let father_rect = father.getBoundingClientRect();
                 let father_value = undefined;
 
-                if(name ==='left' || name === 'width'){
+                if(HORIZONTAL_DIRECTIONS.includes(name)){
                         father_value = father_rect.width;
                 }
 
-                if(name === 'top' || name === 'height'){
+                if(VERTICAL_DIRECTIONS.includes(name)){
                         father_value = father_rect.height;
                 }
 
@@ -46,36 +46,35 @@ function  absolute_position_generate_measures(element, measures, name, previews_
 
         }
 
-
-
-        if(measure === 'vh'){
+        if(measure === ABSOLUTE_POSITION_VIEW_HEIGHT){
                 pixel_value = (pixel_value/100)*browser_height;
         }
-        if(measure === 'vw'){
+        if(measure === ABSOLUTE_POSITION_VIEW_WIDTH){
                 pixel_value = (pixel_value/100)*browser_width;
         }
 
         //get the width of the brother
-        if(operator === '+'){
+        if(operator === ABSOLUTE_POSITION_OPERATOR_PLUS){
                 pixel_value = pixel_value+ previews_value;
         }
-        if(operator === '-'){
+
+        if(operator === ABSOLUTE_POSITION_OPERATOR_MIN){
                 pixel_value = previews_value - pixel_value;
         }
 
 
-        element.style[name] = pixel_value + 'px' ;
+        element.style[name] = pixel_value + ABSOLUTE_POSITION_PX ;
 
 
 
 }
 function absolute_position_processElements() {
-        let elementosRefer = document.querySelectorAll('[stantosDummont]');
+        let elementosRefer = document.querySelectorAll(ABSOLUTE_POSITION_QUERY_SELECTOR);
 
         elementosRefer.forEach(element => {
 
 
-                let attribute = element.getAttribute('stantosDummont');
+                let attribute = element.getAttribute(ABSOLUTE_POSITION_ATTRIBUTE);
                 let browser_width = window.innerWidth;
                 let browser_height = window.innerHeight;
         
@@ -85,12 +84,12 @@ function absolute_position_processElements() {
 
                 let dimensions = closest.dimensions;
                 let previews_element = element.previousElementSibling;
-                element.style.position = 'absolute';
+                element.style.position = ABSOLUTE_POSITION_ABSOLUTE;
 
-                absolute_position_generate_measures(element, dimensions,"left",previews_element,browser_width,browser_height);
-                absolute_position_generate_measures(element,dimensions,"top",previews_element,browser_width,browser_height);
-                absolute_position_generate_measures(element,dimensions,"width",previews_element,browser_width,browser_height);
-                absolute_position_generate_measures(element,dimensions,"height",previews_element,browser_width,browser_height);
+                absolute_position_generate_measures(element, dimensions,ABSOLUTE_POSITION_LEFT,previews_element,browser_width,browser_height);
+                absolute_position_generate_measures(element,dimensions,ABSOLUTE_POSITION_TOP,previews_element,browser_width,browser_height);
+                absolute_position_generate_measures(element,dimensions,ABSOLUTE_POSITION_WIDTH,previews_element,browser_width,browser_height);
+                absolute_position_generate_measures(element,dimensions,ABSOLUTE_POSITION_HEIGHT,previews_element,browser_width,browser_height);
 
         });
 
@@ -99,17 +98,13 @@ function absolute_position_processElements() {
 
 function  absolute_position_start(){
         absolute_position_processElements();
-        function handleMutation() {
-                absolute_position_processElements();
-        }
         //set an  listener for change dimensions
-        window.addEventListener('resize', function(){
-                absolute_position_processElements();
-        });
-        
-        const observer = new MutationObserver(handleMutation);
+        window.addEventListener(ABSOLUTE_POSITION_RESIZE, absolute_position_processElements);
+        const observer = new MutationObserver(absolute_position_processElements);
         const config = { childList: true, subtree: true };
         observer.observe(document.body, config);
+
 }
+
 
 window.onload = absolute_position_start;
