@@ -2,7 +2,7 @@
 const ABSOLUTE_POSITION_ATTRIBUTE = 'APosition';
 const ABSOLUTE_POSITION_QUERY_SELECTOR = `[${ABSOLUTE_POSITION_ATTRIBUTE}]`
 
-
+const ABSOLUTE_POSITION_DOM_LOAD = 'load';
 //code assigns
 const  ABSOLUTE_POSITION_START_CHAR = '$';
 const  ABSOLUTE_POSITION_MEASURE_DIVIDER = ',';
@@ -373,5 +373,5 @@ function  absolute_position_start(){
 
 }
 
-
-window.onload = absolute_position_start;
+//add an document listener for window laod 
+window.addEventListener(ABSOLUTE_POSITION_DOM_LOAD,absolute_position_start);
