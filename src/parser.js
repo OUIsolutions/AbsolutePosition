@@ -164,7 +164,7 @@ function  absolute_position_parser(value){
             }
             /**@type {AbsolutePositionError}*/
             catch (error){
-                console.log(error.message + value);
+               error.show_error(value);
             }
         })
         return final_array;
