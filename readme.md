@@ -21,7 +21,10 @@ for running , you just need to put the cdn script tag into your project.:
     src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/AbsolutePosition.js"></script>
 </head>
 <body>
-        <div  APosition="$16:9(100px,100px,100px,100px)" style="background-color: red;"></div>
+        <div  APosition="$16:9(100px,100px,100px,100px)" style="background-color: red;">
+
+            Hello World
+        </div>
 </body>
 </html>
 ```
