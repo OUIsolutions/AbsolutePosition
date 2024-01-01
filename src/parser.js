@@ -113,12 +113,23 @@ function absolute_position_generate_divided_number(value){
 
  * */
 function  absolute_position_generate_measure(final_array, current){
+
+
     let division = current.split(ABSOLUTE_POSITION_LEFT_PARENTESIS);
+
+    if(division.length <= 1){
+        throw new AbsolutePositionError(PARENTESIS_NOT_PROVIDED);
+    }
+
+
     let dimensions_raw = division[0];
     let divided_dimensions = dimensions_raw.split(ABSOLUTE_POSITION_ASPECT_RATION_SEPARATOR);
+
+
     let horizontal_ration = Number(divided_dimensions[0]);
     let vertical_ratio = Number(divided_dimensions[1]);
     let created = absolute_position_find_or_create_dimension(final_array,horizontal_ration,vertical_ratio);
+
     let numbers = division[1];
     numbers = numbers
         .replaceAll(ABSOLUTE_POSITION_LEFT_PARENTESIS,ABSOLUTE_POSITION_EMPTY_STRING)
@@ -146,8 +157,15 @@ function  absolute_position_parser(value){
         let formatted_value = value.replaceAll(ABSOLUTE_POSITION_SPACE,ABSOLUTE_POSITION_EMPTY_STRING);
         let elements = formatted_value.split(ABSOLUTE_POSITION_START_CHAR);
         elements = elements.filter(v => v !== ABSOLUTE_POSITION_EMPTY_STRING);
+
         elements.forEach(current=>{
-            absolute_position_generate_measure(final_array,current)
+            try{
+                absolute_position_generate_measure(final_array,current)
+            }
+            /**@type {AbsolutePositionError}*/
+            catch (error){
+                console.log(error.message + value);
+            }
         })
         return final_array;
 }

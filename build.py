@@ -1,6 +1,7 @@
 from os import listdir
 elements = [
     'src/constants.js',
+     'src/error.js',
     'src/algo.js',
     'src/parser.js',
     'src/main.js'   

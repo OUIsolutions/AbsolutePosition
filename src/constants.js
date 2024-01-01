@@ -38,3 +38,7 @@ const ABSOLUTE_POSITION_PERCENT = '%';
 //html tags
 const ABSOLUTE_POSITION_RESIZE = 'resize';
 const ABSOLUTE_POSITION_ABSOLUTE = 'absolute';
+
+
+//errors
+const PARENTESIS_NOT_PROVIDED = ' char:"(" not provided';
