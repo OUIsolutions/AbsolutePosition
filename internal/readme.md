@@ -12,7 +12,7 @@ for running , you just need to put the cdn script tag into your project.:
 these it's the example  of a simple div
 <br>
 
-[Page of The Following Code](https://ouisolutions.github.io/AbsolutePosition/exemples/start.html)
+[Page of The Following Code](https://ouisolutions.github.io/internal/exemples/start.html)
 
 #ref:start.html
 
@@ -34,17 +34,33 @@ With the Operators **+** and **-**  you can determine positions dynamically on t
 
 #### Putting a div next to each other on Horizontal
 
-[Page of The Following Code](https://ouisolutions.github.io/AbsolutePosition/exemples/next_to_each_other_horizontal.html)
+[Page of The Following Code](https://ouisolutions.github.io/internal/exemples/next_to_each_other_horizontal.html)
 
 As you can See the + operator increments 100px the value left of each div 
 
 #ref:next_to_each_other_horizontal.html
 #### Putting a div next to each other on Vertical
 
-[Page of The Following Code](https://ouisolutions.github.io/AbsolutePosition/exemples/next_to_each_other_vertical.html)
+[Page of The Following Code](https://ouisolutions.github.io/internal/exemples/next_to_each_other_vertical.html)
 
 #ref:next_to_each_other_vertical.html
 
+###  Putting a div next to each other on Horizontal from right to left
+you also can put divs from button to the top or from right to the left 
+by using the **-** operators
+
+
+[Page of The Following Code](https://ouisolutions.github.io/internal/exemples/next_to_each_other_horizontal_from_right_to_left.html)
+
+#ref:next_to_each_other_horizontal_from_right_to_left.html
+
+## Centralizing Elements 
+
+Whth the % prop, you can centralize or position  an element in every part you want 
+
+#### Horizontal Align Div
+
+[Page of The Following Code](https://ouisolutions.github.io/internal/exemples/horizontal_align.html)
 
 
 
