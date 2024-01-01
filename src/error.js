@@ -4,10 +4,14 @@ class AbsolutePositionError extends Error {
     constructor(message = "",) {
         super(message);
     }
-    show_error(value){
+
+    /**@param {HTMLElement} element*/
+    show_error(element){
         if(absolute_position_show_errors){
-            console.log(this.message + value)
+            console.log(this.message)
+            console.log(element)
         }
+
     }
 }
 

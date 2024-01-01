@@ -41,4 +41,4 @@ const ABSOLUTE_POSITION_ABSOLUTE = 'absolute';
 
 
 //errors
-const PARENTESIS_NOT_PROVIDED = ' char:"(" not provided';
+const PARENTESIS_NOT_PROVIDED = ' char:"(" not provided at:';

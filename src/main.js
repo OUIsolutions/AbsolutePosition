@@ -79,12 +79,12 @@ function absolute_position_processElements() {
                 let browser_height = window.innerHeight;
         
                 
-                let measures  = absolute_position_parser(attribute);
+                let measures  = absolute_position_parser(element,attribute);
 
                 if(measures.length === 0){
                         return;
                 }
-                
+
                 let closest = absolute_position_find_closest_measure(measures,browser_width,browser_height);
 
 

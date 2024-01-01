@@ -148,10 +148,11 @@ function  absolute_position_generate_measure(final_array, current){
 
 
 /**
+ * @param {HTMLElement} element
  * @param {string} value
  * @return {Array<AbsolutePositionProp>}
  * */
-function  absolute_position_parser(value){
+function  absolute_position_parser(element,value){
         /**@type {Array<AbsolutePositionProp>}*/
         let final_array = [];
         let formatted_value = value.replaceAll(ABSOLUTE_POSITION_SPACE,ABSOLUTE_POSITION_EMPTY_STRING);
@@ -164,7 +165,7 @@ function  absolute_position_parser(value){
             }
             /**@type {AbsolutePositionError}*/
             catch (error){
-               error.show_error(value);
+               error.show_error(element);
             }
         })
         return final_array;
