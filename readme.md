@@ -12,7 +12,7 @@ for running , you just need to put the cdn script tag into your project.:
 these it's the example  of a simple div
 <br>
 
-[Page of The Following Code](https://ouisolutions.github.io/internal/exemples/start.html)
+[Page of The Following Code](https://ouisolutions.github.io/AbsolutePosition/internal/exemples/start.html)
 
 ```html
 <!DOCTYPE html>
@@ -39,20 +39,20 @@ these it's the example  of a simple div
 
 Every time you type and **APosition** inside what ever tag , its became recognizable by the lib
 after  you pass the following arguments:
-#### #Example:
+#### Example:
 ```html
     <div  APosition=" $16:9         (50px, 100px,200px, 300px)">
                       AspectRatio    Left, Top  ,Width, Height
 ```
 #### Measures
-you can use(px|%|vh|vw) as the measures (I will add more on the future)
+you can use **px**,**%**,**vh**,**vw** as the measures (I will add more on the future)
 
 ## Operators 
 With the Operators **+** and **-**  you can determine positions dynamically on the screen
 
 #### Putting a div next to each other on Horizontal
 
-[Page of The Following Code](https://ouisolutions.github.io/internal/exemples/next_to_each_other_horizontal.html)
+[Page of The Following Code](https://ouisolutions.github.io/AbsolutePosition/internal/exemples/next_to_each_other_horizontal.html)
 
 As you can See the + operator increments 100px the value left of each div 
 
@@ -78,7 +78,7 @@ As you can See the + operator increments 100px the value left of each div
 ```
 #### Putting a div next to each other on Vertical
 
-[Page of The Following Code](https://ouisolutions.github.io/internal/exemples/next_to_each_other_vertical.html)
+[Page of The Following Code](https://ouisolutions.github.io/AbsolutePosition/internal/exemples/next_to_each_other_vertical.html)
 
 ```html
 <!DOCTYPE html>
@@ -106,7 +106,7 @@ you also can put divs from button to the top or from right to the left
 by using the **-** operators
 
 
-[Page of The Following Code](https://ouisolutions.github.io/internal/exemples/next_to_each_other_horizontal_from_right_to_left.html)
+[Page of The Following Code](https://ouisolutions.github.io/AbsolutePosition/internal/exemples/next_to_each_other_horizontal_from_right_to_left.html)
 
 ```html
 <!DOCTYPE html>
@@ -136,7 +136,7 @@ With the % prop, you can centralize or position  an element in every part you wa
 
 #### Horizontal Centralization
 
-[Page of The Following Code](https://ouisolutions.github.io/internal/exemples/horizontal_centralization.html)
+[Page of The Following Code](https://ouisolutions.github.io/AbsolutePosition/internal/exemples/horizontal_centralization.html)
 
 ```html
 <!DOCTYPE html>
@@ -160,7 +160,7 @@ With the % prop, you can centralize or position  an element in every part you wa
 ```
 
 #### Vertical Centralization
-[Page of The Following Code](https://ouisolutions.github.io/internal/exemples/vertical_centralization.html)
+[Page of The Following Code](https://ouisolutions.github.io/AbsolutePosition/internal/exemples/vertical_centralization.html)
 
 ```html
 <!DOCTYPE html>
@@ -184,7 +184,7 @@ With the % prop, you can centralize or position  an element in every part you wa
 ```
 
 #### Full Centralization
-[Page of The Following Code](https://ouisolutions.github.io/internal/exemples/full_centralization.html)
+[Page of The Following Code](https://ouisolutions.github.io/AbsolutePosition/internal/exemples/full_centralization.html)
 
 ```html
 <!DOCTYPE html>
@@ -206,3 +206,4 @@ With the % prop, you can centralize or position  an element in every part you wa
 </body>
 </html>
 ```
+
