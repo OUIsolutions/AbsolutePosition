@@ -10,6 +10,7 @@ for running , you just need to put the cdn script tag into your project.:
 ## Basic Hello World
 
 these it's the example  of an simple centralization
+
 [Runnable Example](https://ouisolutions.github.io/AbsolutePosition/exemples/start.html)
 
 #ref:start.html
