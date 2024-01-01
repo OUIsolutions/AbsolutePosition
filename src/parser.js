@@ -144,6 +144,11 @@ function  absolute_position_generate_measure(final_array, current){
 
     let divided_numbers = numbers.split(ABSOLUTE_POSITION_MEASURE_DIVIDER);
 
+    if(divided_numbers.length !== 4){
+        throw new AbsolutePositionError(MISSING_DIVIDER);
+    }
+
+    
     created.dimensions = {
         left:absolute_position_generate_divided_number(divided_numbers[0]),
         top:absolute_position_generate_divided_number(divided_numbers[1]),

@@ -42,3 +42,4 @@ const ABSOLUTE_POSITION_ABSOLUTE = 'absolute';
 
 //errors
 const PARENTESIS_NOT_PROVIDED = ' char:"(" not provided at:';
+const  MISSING_DIVIDER = '"," missing at'
