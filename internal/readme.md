@@ -77,3 +77,15 @@ With the % prop, you can centralize or position  an element in every part you wa
 
 ## Error Handling 
 if some error happen on some tag it will be showed on console 
+
+#ref:error.html
+[Page of The Following Code](https://ouisolutions.github.io/AbsolutePosition/internal/exemples/error.html)
+
+### Disabling error Logs 
+if you want to disable error logs , you just need to set the variable **absolute_position_show_errors** 
+to false 
+
+#ref:error_disable.html
+
+[Page of The Following Code](https://ouisolutions.github.io/AbsolutePosition/internal/exemples/error_disable.html)
+

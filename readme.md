@@ -209,3 +209,56 @@ With the % prop, you can centralize or position  an element in every part you wa
 
 ## Error Handling 
 if some error happen on some tag it will be showed on console 
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script  
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/AbsolutePosition.js"></script>
+</head>
+<body>
+        <div  APosition="$16:9(ddpx,100px,200px,300px)" style="background-color: red;">
+
+            Hello World
+        </div>
+</body>
+</html>
+```
+[Page of The Following Code](https://ouisolutions.github.io/AbsolutePosition/internal/exemples/error.html)
+
+### Disabling error Logs 
+if you want to disable error logs , you just need to set the variable **absolute_position_show_errors** 
+to false 
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script  
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/AbsolutePosition.js"></script>
+</head>
+<body>
+
+        <script>
+            absolute_position_show_errors = false;
+        </script>
+
+        <div  APosition="$16:9ddpx,100px,200px,300px)" style="background-color: red;">
+
+            Hello World
+        </div>
+</body>
+</html>
+```
+
+[Page of The Following Code](https://ouisolutions.github.io/AbsolutePosition/internal/exemples/error_disable.html)
+
