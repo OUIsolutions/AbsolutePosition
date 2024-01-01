@@ -11,7 +11,7 @@ for running , you just need to put the cdn script tag into your project.:
 ## Source 
 The Full Source Code it's available in:
 <br>
-[Page of The Following Code](https://github.com/OUIsolutions/AbsolutePosition)
+[Source](https://github.com/OUIsolutions/AbsolutePosition)
 
 
 

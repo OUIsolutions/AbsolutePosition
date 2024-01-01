@@ -7,10 +7,11 @@ for running , you just need to put the cdn script tag into your project.:
 ```html
   <script type="text/javascript"  src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/AbsolutePosition.js"></script>
 ```
+
 ## Source 
 The Full Source Code it's available in:
 <br>
-[Page of The Following Code](https://github.com/OUIsolutions/AbsolutePosition)
+[Source](https://github.com/OUIsolutions/AbsolutePosition)
 
 
 
@@ -230,7 +231,7 @@ if some error happen on some tag it will be showed on console
     src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/AbsolutePosition.js"></script>
 </head>
 <body>
-        <div  APosition="$16:9(ddpx,100px,200px,300px)" style="background-color: red;">
+        <div  APosition="$16:9ddpx,100px,200px,300px)" style="background-color: red;">
 
             Hello World
         </div>
