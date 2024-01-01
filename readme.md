@@ -9,9 +9,8 @@ for running , you just need to put the cdn script tag into your project.:
 ```
 ## Basic Hello World
 
-these is the exemple of the following code 
-
-https://ouisolutions.github.io/AbsolutePosition/exemples/start.html
+these it's the example of the following code
+[Runnable Example](https://ouisolutions.github.io/AbsolutePosition/exemples/start.html)
 
 ```html
 <!DOCTYPE html>
