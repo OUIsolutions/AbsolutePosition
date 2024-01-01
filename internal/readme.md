@@ -21,11 +21,13 @@ these it's the example  of a simple div
 
 Every time you type and **APosition** inside what ever tag , its became recognizable by the lib
 after  you pass the following arguments:
-### #Example:
+#### #Example:
 ```html
     <div  APosition=" $16:9        ( 50px, 100px,200px, 300px)">
                       AspectRatio    Left, Top  ,Width, Height
 ```
+#### Measures
+you can use(px|%|vh|vw) as the measures (I will add more on the future)
 
 ## Operators 
 With the Operators **+** and **-**  you can determine positions dynamically on the screen
@@ -33,6 +35,8 @@ With the Operators **+** and **-**  you can determine positions dynamically on t
 
 #ref:next_to_each_other_horizontal.html
 #### Putting an div next to each other on Vertical
+
+#ref:next_to_each_other_vertical.html
 
 
 
