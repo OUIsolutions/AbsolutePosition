@@ -45,7 +45,7 @@ As you can See the + operator increments 100px the value left of each div
 
 #ref:next_to_each_other_vertical.html
 
-###  Putting a div next to each other on Horizontal from right to left
+####  Putting a div next to each other on Horizontal from right to left
 you also can put divs from button to the top or from right to the left 
 by using the **-** operators
 
