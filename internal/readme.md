@@ -60,15 +60,15 @@ With the % prop, you can centralize or position  an element in every part you wa
 
 #### Horizontal Align Div
 
-[Page of The Following Code](https://ouisolutions.github.io/internal/exemples/horizontal_align.html)
+[Page of The Following Code](https://ouisolutions.github.io/internal/exemples/horizontal_centralization.html)
 
-#ref:horizontal_align.html
+#ref:horizontal_centralization.html
 
 
 #### Vertical Align
-[Page of The Following Code](https://ouisolutions.github.io/internal/exemples/vertical_aligin.html)
+[Page of The Following Code](https://ouisolutions.github.io/internal/exemples/vertical_centralization.html)
 
-#ref:vertical_align.html
+#ref:vertical_centralization.html
 
 
 
