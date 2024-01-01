@@ -160,7 +160,7 @@ With the % prop, you can centralize or position  an element in every part you wa
 </head>
 <body>
         <div  APosition="$16:9(200px,200px,200px,200px)" style="background-color: red;">
-            <div  APosition="$16:9(33.3%,0%,33.3%,100%)" style="background-color: blue;">
+            <div  APosition="$16:9(0%,33.3%,100%,33.3%)" style="background-color: blue;">
             </div>
 
         </div>
@@ -184,7 +184,7 @@ With the % prop, you can centralize or position  an element in every part you wa
 </head>
 <body>
         <div  APosition="$16:9(200px,200px,200px,200px)" style="background-color: red;">
-            <div  APosition="$16:9(0%,33.3%,100%,33.3%)" style="background-color: blue;">
+            <div  APosition="$16:9(33.3%,0%,33.3%,100%)" style="background-color: blue;">
             </div>
 
         </div>
