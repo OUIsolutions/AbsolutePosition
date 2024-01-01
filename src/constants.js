@@ -35,11 +35,20 @@ const ABSOLUTE_POSITION_VIEW_HEIGHT  = 'vh';
 const ABSOLUTE_POSITION_PX = 'px';
 const ABSOLUTE_POSITION_PERCENT = '%';
 
+const ABSOLUTE_POSITION_VALID_DIMENSIONS = [
+    ABSOLUTE_POSITION_VIEW_WIDTH,
+    ABSOLUTE_POSITION_VIEW_HEIGHT,
+    ABSOLUTE_POSITION_PX,
+    ABSOLUTE_POSITION_PERCENT
+]
 //html tags
 const ABSOLUTE_POSITION_RESIZE = 'resize';
 const ABSOLUTE_POSITION_ABSOLUTE = 'absolute';
 
 
 //errors
-const PARENTESIS_NOT_PROVIDED = ' char:"(" not provided at:';
-const  MISSING_DIVIDER = '"," missing at'
+const ABSOLUTE_PARENTESIS_NOT_PROVIDED = ' char:"(" not provided at:';
+const  ABSOLUTE_POSITION_MISSING_DIVIDER = '"," missing at';
+const ABSOLUTE_POSITION_ARGS_NOT_PASSED = 'Args not passed at:';
+const ABSOLUTE_POSITION_INVALID_DIMENSION = 'Invalid Dimensions at:'
+const ABSOLUTE_POSITION_NOT_VALID_NUMBER = 'Not Valid Number at:';

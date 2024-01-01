@@ -53,11 +53,16 @@ function absolute_position_find_or_create_dimension(element, horizontal_ratio, v
  */
 function absolute_position_generate_divided_number(value){
 
+
+    if(value === ABSOLUTE_POSITION_EMPTY_STRING){
+        throw new AbsolutePositionError(ABSOLUTE_POSITION_ARGS_NOT_PASSED);
+    }
+
+
     let num_string = ABSOLUTE_POSITION_EMPTY_STRING;
     let operator = undefined;
 
     let passed_operator = ABSOLUTE_POSITION_VALID_OPERATORS.includes(value[0]);
-
 
 
     if(passed_operator){
@@ -92,14 +97,25 @@ function absolute_position_generate_divided_number(value){
     }
 
     let dimensions = dimensions_list.join(ABSOLUTE_POSITION_EMPTY_STRING);
-    
+
+
     if(dimensions === ABSOLUTE_POSITION_EMPTY_STRING){
         dimensions = ABSOLUTE_POSITION_PERCENT;
     }
+    if(!ABSOLUTE_POSITION_VALID_DIMENSIONS.includes(dimensions)){
+        throw new  AbsolutePositionError(ABSOLUTE_POSITION_INVALID_DIMENSION);
+    }
+
+    
     
 
     let final_string_num = new_num_string.join(ABSOLUTE_POSITION_EMPTY_STRING);
+
+
     let num = Number(final_string_num);
+    if(!num){
+        throw  new AbsolutePositionError(ABSOLUTE_POSITION_NOT_VALID_NUMBER);
+    }
 
     return {
         measure:dimensions,
@@ -122,7 +138,7 @@ function  absolute_position_generate_measure(final_array, current){
     let division = current.split(ABSOLUTE_POSITION_LEFT_PARENTESIS);
 
     if(division.length <= 1){
-        throw new AbsolutePositionError(PARENTESIS_NOT_PROVIDED);
+        throw new AbsolutePositionError(ABSOLUTE_PARENTESIS_NOT_PROVIDED);
     }
 
 
@@ -146,7 +162,7 @@ function  absolute_position_generate_measure(final_array, current){
     let divided_numbers = numbers.split(ABSOLUTE_POSITION_MEASURE_DIVIDER);
 
     if(divided_numbers.length !== 4){
-        throw new AbsolutePositionError(MISSING_DIVIDER);
+        throw new AbsolutePositionError(ABSOLUTE_POSITION_MISSING_DIVIDER);
     }
 
     let left =absolute_position_generate_divided_number(divided_numbers[0]);
@@ -186,7 +202,7 @@ function  absolute_position_parser(element,value){
             catch (error){
                error.show_error(element);
             }
-            
+
         })
         return final_array;
 }

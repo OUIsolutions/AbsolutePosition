@@ -11,7 +11,7 @@ class AbsolutePositionError extends Error {
             console.log(this.message)
             console.log(element)
         }
-
     }
+
 }
 
