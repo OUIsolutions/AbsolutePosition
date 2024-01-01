@@ -80,7 +80,13 @@ function absolute_position_processElements() {
         
                 
                 let measures  = absolute_position_parser(attribute);
+
+                if(measures.length === 0){
+                        return;
+                }
+                
                 let closest = absolute_position_find_closest_measure(measures,browser_width,browser_height);
+
 
                 let dimensions = closest.dimensions;
                 let previews_element = element.previousElementSibling;
