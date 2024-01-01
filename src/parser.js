@@ -125,9 +125,15 @@ function  absolute_position_generate_measure(final_array, current){
     let dimensions_raw = division[0];
     let divided_dimensions = dimensions_raw.split(ABSOLUTE_POSITION_ASPECT_RATION_SEPARATOR);
 
+    let  horizontal_ration = window.innerWidth;
+    let  vertical_ratio =window.innerHeight;
 
-    let horizontal_ration = Number(divided_dimensions[0]);
-    let vertical_ratio = Number(divided_dimensions[1]);
+    if(divided_dimensions.length === 2){
+        horizontal_ration = Number(divided_dimensions[0]);
+        vertical_ratio = Number(divided_dimensions[1]);
+    }
+
+
     let created = absolute_position_find_or_create_dimension(final_array,horizontal_ration,vertical_ratio);
 
     let numbers = division[1];
