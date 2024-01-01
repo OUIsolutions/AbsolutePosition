@@ -131,13 +131,78 @@ by using the **-** operators
 
 ## Centralizing Elements 
 
-Whth the % prop, you can centralize or position  an element in every part you want 
-
-#### Horizontal Align Div
-
-[Page of The Following Code](https://ouisolutions.github.io/internal/exemples/horizontal_align.html)
+With the % prop, you can centralize or position  an element in every part you want 
 
 
+#### Horizontal Centralization
 
+[Page of The Following Code](https://ouisolutions.github.io/internal/exemples/horizontal_centralization.html)
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script  
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/AbsolutePosition.js"></script>
+</head>
+<body>
+        <div  APosition="$16:9(200px,200px,200px,200px" style="background-color: red;">
+            <div  APosition="$16:9(33.3%,0%,33.3%,100%" style="background-color: #0033ff;">
+            </div>
 
+        </div>
+</body>
+</html>
+```
+
+#### Vertical Centralization
+[Page of The Following Code](https://ouisolutions.github.io/internal/exemples/vertical_centralization.html)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script  
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/AbsolutePosition.js"></script>
+</head>
+<body>
+        <div  APosition="$16:9(200px,200px,200px,200px" style="background-color: red;">
+            <div  APosition="$16:9(0%,33.3%,100%,33.3%" style="background-color: #0033ff;">
+            </div>
+
+        </div>
+</body>
+</html>
+```
+
+#### Full Centralization
+[Page of The Following Code](https://ouisolutions.github.io/internal/exemples/full_centralization.html)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script  
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/AbsolutePosition.js"></script>
+</head>
+<body>
+        <div  APosition="$16:9(200px,200px,200px,200px" style="background-color: red;">
+            <div  APosition="$16:9(33.3%,33.3%,33.3%,33.3%" style="background-color: #0033ff;">
+            </div>
+
+        </div>
+</body>
+</html>
+```
