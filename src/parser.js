@@ -58,10 +58,13 @@ function absolute_position_generate_divided_number(value){
 
     let passed_operator = ABSOLUTE_POSITION_VALID_OPERATORS.includes(value[0]);
 
+
+
     if(passed_operator){
         operator = value[0];
         num_string = value.substring(1);
     }
+
     if(!passed_operator){
         num_string = value;
     }
@@ -97,6 +100,7 @@ function absolute_position_generate_divided_number(value){
 
     let final_string_num = new_num_string.join(ABSOLUTE_POSITION_EMPTY_STRING);
     let num = Number(final_string_num);
+
     return {
         measure:dimensions,
         value:num,
@@ -133,9 +137,6 @@ function  absolute_position_generate_measure(final_array, current){
         vertical_ratio = Number(divided_dimensions[1]);
     }
 
-
-    let created = absolute_position_find_or_create_dimension(final_array,horizontal_ration,vertical_ratio);
-
     let numbers = division[1];
     numbers = numbers
         .replaceAll(ABSOLUTE_POSITION_LEFT_PARENTESIS,ABSOLUTE_POSITION_EMPTY_STRING)
@@ -148,13 +149,20 @@ function  absolute_position_generate_measure(final_array, current){
         throw new AbsolutePositionError(MISSING_DIVIDER);
     }
 
-    
+    let left =absolute_position_generate_divided_number(divided_numbers[0]);
+    let top =absolute_position_generate_divided_number(divided_numbers[1]);
+    let width =absolute_position_generate_divided_number(divided_numbers[2]);
+    let height =absolute_position_generate_divided_number(divided_numbers[3])
+
+    let created = absolute_position_find_or_create_dimension(final_array,horizontal_ration,vertical_ratio);
     created.dimensions = {
-        left:absolute_position_generate_divided_number(divided_numbers[0]),
-        top:absolute_position_generate_divided_number(divided_numbers[1]),
-        width:absolute_position_generate_divided_number(divided_numbers[2]),
-        height:absolute_position_generate_divided_number(divided_numbers[3])
+        left:left,
+        top:top,
+        width:width,
+        height:height
     }
+
+
 }
 
 
@@ -178,6 +186,7 @@ function  absolute_position_parser(element,value){
             catch (error){
                error.show_error(element);
             }
+            
         })
         return final_array;
 }
