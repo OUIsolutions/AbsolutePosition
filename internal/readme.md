@@ -9,14 +9,30 @@ for running , you just need to put the cdn script tag into your project.:
 ```
 ## Basic Hello World
 
-these it's the example  of an simple centralization
+these it's the example  of a simple div
 <br>
 
-[Runnable Example](https://ouisolutions.github.io/AbsolutePosition/exemples/start.html)
+[Page of The Following Code](https://ouisolutions.github.io/AbsolutePosition/exemples/start.html)
 
 #ref:start.html
 
 
+## Understanding the Args 
+
+Every time you type and **APosition** inside what ever tag , its became recognizable by the lib
+after  you pass the following arguments:
+### #Example:
+```html
+    <div  APosition=" $16:9        ( 50px, 100px,200px, 300px)">
+                      AspectRatio    Left, Top  ,Width, Height
+```
+
+## Operators 
+With the Operators **+** and **-**  you can determine positions dynamically on the screen
+#### Putting an div next to each other on Horizontal
+
+#ref:next_to_each_other_horizontal.html
+#### Putting an div next to each other on Vertical
 
 
 
