@@ -31,12 +31,20 @@ you can use(px|%|vh|vw) as the measures (I will add more on the future)
 
 ## Operators 
 With the Operators **+** and **-**  you can determine positions dynamically on the screen
-#### Putting an div next to each other on Horizontal
+
+#### Putting a div next to each other on Horizontal
+
+[Page of The Following Code](https://ouisolutions.github.io/AbsolutePosition/exemples/next_to_each_other_horizontal.html)
+
+As you can See the + operator increments 100px the value left of each div 
 
 #ref:next_to_each_other_horizontal.html
-#### Putting an div next to each other on Vertical
+#### Putting a div next to each other on Vertical
+
+[Page of The Following Code](https://ouisolutions.github.io/AbsolutePosition/exemples/next_to_each_other_vertical.html)
 
 #ref:next_to_each_other_vertical.html
+
 
 
 
