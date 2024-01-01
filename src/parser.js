@@ -113,7 +113,7 @@ function absolute_position_generate_divided_number(value){
 
 
     let num = Number(final_string_num);
-    if(!num){
+    if(num === undefined){
         throw  new AbsolutePositionError(ABSOLUTE_POSITION_NOT_VALID_NUMBER);
     }
 
