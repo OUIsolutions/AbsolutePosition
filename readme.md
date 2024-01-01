@@ -69,9 +69,9 @@ As you can See the + operator increments 100px the value left of each div
 </head>
 <body>
         <div  APosition="$16:9(0px,100px,100px,100px)" style="background-color: red;"></div>
-        <div  APosition="$16:9(+100px,100px,100px,100px)" style="background-color: #0033ff;"></div>
+        <div  APosition="$16:9(+100px,100px,100px,100px)" style="background-color: blue;"></div>
         <div  APosition="$16:9(+100px,100px,100px,100px)" style="background-color: red;"></div>
-        <div  APosition="$16:9(+100px,100px,100px,100px)" style="background-color: #0033ff;"></div>
+        <div  APosition="$16:9(+100px,100px,100px,100px)" style="background-color: blue;"></div>
 
 </body>
 </html>
@@ -93,9 +93,9 @@ As you can See the + operator increments 100px the value left of each div
 </head>
 <body>
         <div  APosition="$16:9(0px,0px,100px,100px)" style="background-color: red;"></div>
-        <div  APosition="$16:9(0px,+100px,100px,100px)" style="background-color: #0033ff;"></div>
+        <div  APosition="$16:9(0px,+100px,100px,100px)" style="background-color: blue;"></div>
         <div  APosition="$16:9(0px,+100px,100px,100px)" style="background-color: red;"></div>
-        <div  APosition="$16:9(0px,+100px,100px,100px)" style="background-color: #0033ff;"></div>
+        <div  APosition="$16:9(0px,+100px,100px,100px)" style="background-color: blue;"></div>
 
 </body>
 </html>
@@ -121,9 +121,9 @@ by using the **-** operators
 </head>
 <body>
         <div  APosition="$16:9(800px,100px,100px,100px)" style="background-color: red;"></div>
-        <div  APosition="$16:9(-100px,100px,100px,100px)" style="background-color: #0033ff;"></div>
+        <div  APosition="$16:9(-100px,100px,100px,100px)" style="background-color: blue;"></div>
         <div  APosition="$16:9(-100px,100px,100px,100px)" style="background-color: red;"></div>
-        <div  APosition="$16:9(-100px,100px,100px,100px)" style="background-color: #0033ff;"></div>
+        <div  APosition="$16:9(-100px,100px,100px,100px)" style="background-color: blue;"></div>
 
 </body>
 </html>
@@ -151,7 +151,7 @@ With the % prop, you can centralize or position  an element in every part you wa
 </head>
 <body>
         <div  APosition="$16:9(200px,200px,200px,200px)" style="background-color: red;">
-            <div  APosition="$16:9(33.3%,0%,33.3%,100%)" style="background-color: #0033ff;">
+            <div  APosition="$16:9(33.3%,0%,33.3%,100%)" style="background-color: blue;">
             </div>
 
         </div>
@@ -175,7 +175,7 @@ With the % prop, you can centralize or position  an element in every part you wa
 </head>
 <body>
         <div  APosition="$16:9(200px,200px,200px,200px)" style="background-color: red;">
-            <div  APosition="$16:9(0%,33.3%,100%,33.3%)" style="background-color: #0033ff;">
+            <div  APosition="$16:9(0%,33.3%,100%,33.3%)" style="background-color: blue;">
             </div>
 
         </div>
