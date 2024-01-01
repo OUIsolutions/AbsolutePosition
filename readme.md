@@ -207,3 +207,5 @@ With the % prop, you can centralize or position  an element in every part you wa
 </html>
 ```
 
+## Error Handling 
+if some error happen on some tag it will be showed on console 
