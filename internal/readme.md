@@ -23,7 +23,7 @@ Every time you type and **APosition** inside what ever tag , its became recogniz
 after  you pass the following arguments:
 #### #Example:
 ```html
-    <div  APosition=" $16:9        ( 50px, 100px,200px, 300px)">
+    <div  APosition=" $16:9         (50px, 100px,200px, 300px)">
                       AspectRatio    Left, Top  ,Width, Height
 ```
 #### Measures
