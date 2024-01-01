@@ -56,12 +56,19 @@ by using the **-** operators
 
 ## Centralizing Elements 
 
-Whth the % prop, you can centralize or position  an element in every part you want 
+With the % prop, you can centralize or position  an element in every part you want 
 
 #### Horizontal Align Div
 
 [Page of The Following Code](https://ouisolutions.github.io/internal/exemples/horizontal_align.html)
 
+#ref:horizontal_align.html
+
+
+#### Vertical Align
+[Page of The Following Code](https://ouisolutions.github.io/internal/exemples/vertical_aligin.html)
+
+#ref:vertical_align.html
 
 
 
