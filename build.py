@@ -14,7 +14,8 @@ for e in elements:
     with open(e, 'r') as f:
         output += f.read() + '\n'
 sha = hashlib.sha256()
-output_name = f'AbsolutePosition{sha.hexdigest()}.js'
+makedirs('AbsolutePosition', exist_ok=True)
+output_name = f'AbsolutePosition/{sha.hexdigest()}.js'
 
 with open(output_name, 'w') as f:
     f.write(output)
