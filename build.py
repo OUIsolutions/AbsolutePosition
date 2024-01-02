@@ -14,9 +14,9 @@ for e in elements:
     with open(e, 'r') as f:
         output += f.read() + '\n'
 sha = hashlib.sha256()
-output_name = sha.hexdigest()
+output_name = f'AbsolutePosition{sha.hexdigest()}.js'
 
-with open(f'AbsolutePosition{output_name}.js', 'w') as f:
+with open(output_name, 'w') as f:
     f.write(output)
 
 
@@ -24,8 +24,9 @@ with open(f'AbsolutePosition{output_name}.js', 'w') as f:
 
 
 #replacing html links 
-link = 'https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@latest/AbsolutePosition.js'
-div = f'src="{link}?v={sha.hexdigest()}"'
+link = f'https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/{output_name}'
+div = f'src="{link}"'
+
 
 rmtree('internal/exemples',ignore_errors=True)
 makedirs('internal/exemples')
