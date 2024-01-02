@@ -10,6 +10,10 @@ SOURCES = [
     'src/parser.js',
     'src/main.js'   
 ]
+LIB_NAME = 'AbsolutePosition'
+REPO_NAME = 'OUIsolutions/AbsolutePosition'
+
+
 def create_output():
     output = ''
     for e in SOURCES:
@@ -19,7 +23,7 @@ def create_output():
 
     makedirs('versions', exist_ok=True)
 
-    output_name = f'versions/AbsolutePosition_v{version}.js'
+    output_name = f'versions/{LIB_NAME}_v{version}.js'
 
     with open(output_name, 'w') as f:
         f.write(output)
@@ -28,7 +32,7 @@ def create_output():
 
 output_name = create_output()
 #replacing html links 
-link = f'https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/{output_name}'
+link = f'https://cdn.jsdelivr.net/gh/{REPO_NAME}@main/{output_name}'
 div = f'src="{link}"'
 
 
