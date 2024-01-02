@@ -2,29 +2,31 @@ from os import listdir
 import hashlib
 from shutil import rmtree
 from os import makedirs
-elements = [
+
+SOURCES = [
     'src/constants.js',
      'src/error.js',
     'src/algo.js',
     'src/parser.js',
     'src/main.js'   
 ]
-output = ''
-for e in elements:
-    with open(e, 'r') as f:
-        output += f.read() + '\n'
-sha = hashlib.sha256()
-makedirs('versions', exist_ok=True)
+def create_output():
+    output = ''
+    for e in SOURCES:
+        with open(e, 'r') as f:
+            output += f.read() + '\n'
+    version = input('version: ')
 
-output_name = f'versions/AbsolutePosition{sha.hexdigest()}.js'
+    makedirs('versions', exist_ok=True)
 
-with open(output_name, 'w') as f:
-    f.write(output)
+    output_name = f'versions/AbsolutePosition_v{version}.js'
+
+    with open(output_name, 'w') as f:
+        f.write(output)
+    return output_name
 
 
-#generate the sha for output 
-
-
+output_name = create_output()
 #replacing html links 
 link = f'https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/{output_name}'
 div = f'src="{link}"'
@@ -41,11 +43,11 @@ for e in listdir('internal/exemples_not_linked'):
             f.write(output)
 
 
-
 exemples = listdir('internal/exemples')
 
 with open('internal/readme.md', 'r') as f:
     readme_code = f.read()
+
 
 for e in exemples:
     with open(f'internal/exemples/{e}', 'r') as f:
@@ -56,6 +58,3 @@ if "#ref" in readme_code:
     raise Exception(f"Missing reference {readme_code.split('#ref')[1]}")
 with open('readme.md', 'w') as f:
     f.write(readme_code)
-
-
-   

@@ -4,9 +4,7 @@ elements on the screen in an extremely easy way.
 
 ## Running
 for running , you just need to put the cdn script tag into your project.:
-```html
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePositione3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js"></script>
-```
+#ref:script_start.html
 
 ## Source 
 The Full Source Code it's available in:

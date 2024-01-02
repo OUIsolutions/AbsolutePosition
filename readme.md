@@ -5,7 +5,8 @@ elements on the screen in an extremely easy way.
 ## Running
 for running , you just need to put the cdn script tag into your project.:
 ```html
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePositione3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.57.js"></script>
+
 ```
 
 ## Source 
@@ -30,7 +31,7 @@ these it's the example  of a simple div
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePositione3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.57.js"></script>
 
 </head>
 <body>
@@ -71,7 +72,7 @@ As you can See the + operator increments 100px the value left of each div
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePositione3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.57.js"></script>
 
 </head>
 <body>
@@ -94,7 +95,7 @@ As you can See the + operator increments 100px the value left of each div
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePositione3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.57.js"></script>
 
 </head>
 <body>
@@ -121,7 +122,7 @@ by using the **-** operators
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePositione3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.57.js"></script>
 
 </head>
 <body>
@@ -150,7 +151,7 @@ With the % prop, you can centralize or position  an element in every part you wa
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePositione3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.57.js"></script>
 
 </head>
 <body>
@@ -173,7 +174,7 @@ With the % prop, you can centralize or position  an element in every part you wa
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePositione3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.57.js"></script>
 
 </head>
 <body>
@@ -197,7 +198,7 @@ With the % prop, you can centralize or position  an element in every part you wa
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePositione3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.57.js"></script>
 
 </head>
 <body>
@@ -220,7 +221,7 @@ if some error happen on some tag it will be showed on console
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePositione3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.57.js"></script>
 </head>
 <body>
         <div  APosition="$16:9ddpx,100px,200px,300px)" style="background-color: red;">
@@ -243,7 +244,7 @@ to false
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePositione3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.57.js"></script>
 </head>
 <body>
 
