@@ -1,6 +1,7 @@
 from os import listdir
 import hashlib
-
+from shutil import rmtree
+from os import makedirs
 elements = [
     'src/constants.js',
      'src/error.js',
@@ -12,9 +13,31 @@ output = ''
 for e in elements:
     with open(e, 'r') as f:
         output += f.read() + '\n'
+sha = hashlib.sha256()
+output_name = sha.hexdigest()
 
-with open('AbsolutePosition.js', 'w') as f:
+with open(f'AbsolutePosition{output_name}.js', 'w') as f:
     f.write(output)
+
+
+#generate the sha for output 
+
+
+#replacing html links 
+link = 'https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@latest/AbsolutePosition.js'
+div = f'src="{link}?v={sha.hexdigest()}"'
+
+rmtree('internal/exemples',ignore_errors=True)
+makedirs('internal/exemples')
+
+for e in listdir('internal/exemples_not_linked'):
+    with open(f'internal/exemples_not_linked/{e}', 'r') as f:
+        output = f.read()
+        output = output.replace('#lib#', div)
+        with open(f'internal/exemples/{e}', 'w') as f:
+            f.write(output)
+
+
 
 exemples = listdir('internal/exemples')
 
@@ -31,18 +54,5 @@ if "#ref" in readme_code:
 with open('readme.md', 'w') as f:
     f.write(readme_code)
 
-#generate the sha for output 
-sha = hashlib.sha256()
 
-#replacing html links 
-link = 'https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@latest/AbsolutePosition.js'
-div = f'src="{link}" integrity="{sha.hexdigest()}"'
-
-
-for e in listdir('exemples_not_linked'):
-    with open(f'exemples_not_linked/{e}', 'r') as f:
-        output = f.read()
-        output = output.replace('#lib#', div)
-        with open(f'exemples/{e}', 'w') as f:
-            f.write(output)
    

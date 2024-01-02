@@ -30,9 +30,8 @@ these it's the example  of a simple div
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script  
-    type="text/javascript"
-    src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@latest/AbsolutePosition.js?v=0.56"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@latest/AbsolutePosition.js?v=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"></script>
+
 </head>
 <body>
         <div  APosition="$16:9(50px,100px,200px,300px)" style="background-color: red;">
@@ -72,9 +71,8 @@ As you can See the + operator increments 100px the value left of each div
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script  
-    type="text/javascript"
-    src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@latest/AbsolutePosition.js?v=0.56"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@latest/AbsolutePosition.js?v=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"></script>
+
 </head>
 <body>
         <div  APosition="$16:9(00px,100px,100px,100px)" style="background-color: red;"></div>
@@ -96,9 +94,8 @@ As you can See the + operator increments 100px the value left of each div
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script  
-    type="text/javascript"
-    src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@latest/AbsolutePosition.js?v=0.56"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@latest/AbsolutePosition.js?v=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"></script>
+
 </head>
 <body>
         <div  APosition="$16:9(0px,0px,100px,100px)" style="background-color: red;"></div>
@@ -124,9 +121,8 @@ by using the **-** operators
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script  
-    type="text/javascript"
-    src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@latest/AbsolutePosition.js?v=0.56"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@latest/AbsolutePosition.js?v=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"></script>
+
 </head>
 <body>
         <div  APosition="$16:9(800px,100px,100px,100px)" style="background-color: red;"></div>
@@ -154,9 +150,8 @@ With the % prop, you can centralize or position  an element in every part you wa
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script  
-    type="text/javascript"
-    src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@latest/AbsolutePosition.js?v=0.56"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@latest/AbsolutePosition.js?v=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"></script>
+
 </head>
 <body>
         <div  APosition="$16:9(200px,200px,200px,200px)" style="background-color: red;">
@@ -178,9 +173,8 @@ With the % prop, you can centralize or position  an element in every part you wa
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script  
-    type="text/javascript"
-    src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@latest/AbsolutePosition.js?v=0.56"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@latest/AbsolutePosition.js?v=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"></script>
+
 </head>
 <body>
         <div  APosition="$16:9(200px,200px,200px,200px)" style="background-color: red;">
@@ -202,9 +196,9 @@ With the % prop, you can centralize or position  an element in every part you wa
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script  
-    type="text/javascript"
-    src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@latest/AbsolutePosition.js?v=0.56"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@latest/AbsolutePosition.js?v=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"></script>
+
 </head>
 <body>
         <div  APosition="$16:9(200px,200px,200px,200px)" style="background-color: red;">
@@ -226,9 +220,7 @@ if some error happen on some tag it will be showed on console
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script  
-    type="text/javascript"
-    src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@latest/AbsolutePosition.js?v=0.56"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@latest/AbsolutePosition.js?v=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"></script>
 </head>
 <body>
         <div  APosition="$16:9ddpx,100px,200px,300px)" style="background-color: red;">
@@ -251,9 +243,7 @@ to false
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script  
-    type="text/javascript"
-    src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@latest/AbsolutePosition.js?v=0.56"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@latest/AbsolutePosition.js?v=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"></script>
 </head>
 <body>
 
