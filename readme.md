@@ -76,7 +76,7 @@ As you can See the + operator increments 100px the value left of each div
 
 </head>
 <body>
-        <div  APosition="$16:9(00px,100px,100px,100px)" style="background-color: red;"></div>
+        <div  APosition="$16:9(+100px,100px,100px,100px)" style="background-color: red;"></div>
         <div  APosition="$16:9(+100px,100px,100px,100px)" style="background-color: blue;"></div>
         <div  APosition="$16:9(+100px,100px,100px,100px)" style="background-color: red;"></div>
         <div  APosition="$16:9(+100px,100px,100px,100px)" style="background-color: blue;"></div>
@@ -99,7 +99,7 @@ As you can See the + operator increments 100px the value left of each div
 
 </head>
 <body>
-        <div  APosition="$16:9(0px,0px,100px,100px)" style="background-color: red;"></div>
+        <div  APosition="$16:9(0px,+100px,100px,100px)" style="background-color: red;"></div>
         <div  APosition="$16:9(0px,+100px,100px,100px)" style="background-color: blue;"></div>
         <div  APosition="$16:9(0px,+100px,100px,100px)" style="background-color: red;"></div>
         <div  APosition="$16:9(0px,+100px,100px,100px)" style="background-color: blue;"></div>
@@ -126,7 +126,7 @@ by using the **-** operators
 
 </head>
 <body>
-        <div  APosition="$16:9(800px,100px,100px,100px)" style="background-color: red;"></div>
+        <div  APosition="$16:9(-180px,100px,100px,100px)" style="background-color: red;"></div>
         <div  APosition="$16:9(-100px,100px,100px,100px)" style="background-color: blue;"></div>
         <div  APosition="$16:9(-100px,100px,100px,100px)" style="background-color: red;"></div>
         <div  APosition="$16:9(-100px,100px,100px,100px)" style="background-color: blue;"></div>
