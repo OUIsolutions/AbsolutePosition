@@ -72,7 +72,8 @@ function  absolute_position_generate_measures(element, measures, name, previews_
         }
 
         if(operator === ABSOLUTE_POSITION_OPERATOR_MIN){
-                pixel_value = previews_value - pixel_value - father_value;
+
+                pixel_value = previews_value - pixel_value + father_value;
         }
 
 
