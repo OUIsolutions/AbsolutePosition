@@ -15,8 +15,11 @@ function  absolute_position_generate_measures(element, measures, name, previews_
         let measure = current_measure.measure;
         let operator = current_measure.operator;
 
+        if(!previews_element && operator === ABSOLUTE_POSITION_OPERATOR_PLUS_FIRST){
+                element.style[name] = 0 + ABSOLUTE_POSITION_PX;
+                return;;
+        }
 
- 
 
         if(!previews_element || !operator){
                 element.style[name] = value + measure;
@@ -50,12 +53,13 @@ function  absolute_position_generate_measures(element, measures, name, previews_
         if(measure === ABSOLUTE_POSITION_VIEW_HEIGHT){
                 pixel_value = (pixel_value/100)*browser_height;
         }
+
         if(measure === ABSOLUTE_POSITION_VIEW_WIDTH){
                 pixel_value = (pixel_value/100)*browser_width;
         }
 
         //get the width of the brother
-        if(operator === ABSOLUTE_POSITION_OPERATOR_PLUS){
+        if(operator === ABSOLUTE_POSITION_OPERATOR_PLUS || operator === ABSOLUTE_POSITION_OPERATOR_PLUS_FIRST){
                 pixel_value = pixel_value+ previews_value;
         }
 
