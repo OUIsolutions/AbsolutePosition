@@ -17,7 +17,7 @@ function  absolute_position_generate_measures(element, measures, name, previews_
 
         if(!previews_element && operator === ABSOLUTE_POSITION_OPERATOR_PLUS_FIRST){
                 element.style[name] = 0 + ABSOLUTE_POSITION_PX;
-                return;;
+                return;
         }
 
 
@@ -30,11 +30,13 @@ function  absolute_position_generate_measures(element, measures, name, previews_
         /**@type {number}*/
         let previews_value = previews_rect[name];
 
+        let father = element.parentElement;
+        let father_rect = father.getBoundingClientRect();
+
 
         let pixel_value = value;
         if(measure === ABSOLUTE_POSITION_PERCENT){
-                let father = element.parentElement;
-                let father_rect = father.getBoundingClientRect();
+
                 let father_value = undefined;
 
                 if(ABSOLUTE_POSITION_HORIZONTAL_DIRECTIONS.includes(name)){
@@ -60,7 +62,7 @@ function  absolute_position_generate_measures(element, measures, name, previews_
 
         //get the width of the brother
         if(operator === ABSOLUTE_POSITION_OPERATOR_PLUS || operator === ABSOLUTE_POSITION_OPERATOR_PLUS_FIRST){
-                pixel_value = pixel_value+ previews_value;
+                pixel_value+= previews_value - father_rect[name];
         }
 
         if(operator === ABSOLUTE_POSITION_OPERATOR_MIN){
