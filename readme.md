@@ -59,6 +59,7 @@ you can use **px**,**%**,**vh**,**vw** as the measures (I will add more on the f
 ## Operators 
 With the Operators **+** and **-**  you can determine positions dynamically on the screen
 
+
 #### Putting a div next to each other on Horizontal
 
 [Page of The Following Code](https://ouisolutions.github.io/AbsolutePosition/internal/exemples/next_to_each_other_horizontal.html)
@@ -189,6 +190,31 @@ With the % prop, you can centralize or position  an element in every part you wa
 
 #### Full Centralization
 [Page of The Following Code](https://ouisolutions.github.io/AbsolutePosition/internal/exemples/full_centralization.html)
+
+
+### The f Operator
+the f operator worsks exacly like +, but evaluetes to 0, if its the first element (the +) operator, its usefull when
+dealling with arrays 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.63.js"></script>
+
+</head>
+<body>
+    <div  APosition="$16:9(f100px,100px,100px,100px)" style="background-color: red;"></div>
+    <div  APosition="$16:9(f100px,100px,100px,100px)" style="background-color: blue;"></div>
+    <div  APosition="$16:9(f100px,100px,100px,100px)" style="background-color: red;"></div>
+    <div  APosition="$16:9(f100px,100px,100px,100px)" style="background-color: blue;"></div>
+
+</body>
+</html>
+```
+
 
 ## Macros 
 With Macros, you can define macros to replace the code into the tag 
