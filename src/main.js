@@ -88,6 +88,15 @@ function absolute_position_processElements() {
 
 
                 let attribute = element.getAttribute(ABSOLUTE_POSITION_ATTRIBUTE);
+                if(attribute === ABSOLUTE_POSITION_ROOT){
+                        element.style.position = ABSOLUTE_POSITION_ABSOLUTE;
+                        element.style.left = 0;
+                        element.style.top = 0;
+                        element.style.width = '100vw';
+                        element.style.height = '100vh';
+                        return;
+                }
+
                 attribute = Absolute_position_replace_macros(attribute);
 
 
