@@ -16,10 +16,7 @@ function  absolute_position_generate_measures(element, measures, name, previews_
         let operator = current_measure.operator;
 
 
-        if(!previews_element && operator){
-                element.style[name] = 0 + ABSOLUTE_POSITION_PX;
-                return;
-        }
+ 
 
         if(!previews_element || !operator){
                 element.style[name] = value + measure;
