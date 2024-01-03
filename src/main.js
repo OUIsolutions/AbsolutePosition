@@ -111,7 +111,7 @@ function  absolute_position_start(){
         window.addEventListener(ABSOLUTE_POSITION_RESIZE, absolute_position_processElements);
         const observer = new MutationObserver(absolute_position_processElements);
         const config = { childList: true, subtree: true };
-        observer.observe(document.body, config);
+        observer.observe(document, config);
 
 }
 
