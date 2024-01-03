@@ -16,10 +16,22 @@ function  absolute_position_generate_measures(element, measures, name, previews_
         let operator = current_measure.operator;
 
 
- 
+        
 
         if(!previews_element || !operator){
-                element.style[name] = value + measure;
+
+                let father = element.parentElement;
+                let father_rect = father.getBoundingClientRect();
+                let father_value = 0;
+
+                if(name === ABSOLUTE_POSITION_LEFT){
+                        father_value = father_rect.left;        
+                }
+                if(name === ABSOLUTE_POSITION_TOP){
+                        father_value = father_rect.top;
+                }
+
+                element.style[name] = value + father_value + measure ;
                 return;
         }
 
