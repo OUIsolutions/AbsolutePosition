@@ -60,13 +60,19 @@ function  absolute_position_generate_measures(element, measures, name, previews_
                 pixel_value = (pixel_value/100)*browser_width;
         }
 
+        let father_value = 0;
+        if(name === ABSOLUTE_POSITION_LEFT || name === ABSOLUTE_POSITION_TOP){
+                father_value = father_rect[name];
+        }
+
+
         //get the width of the brother
         if(operator === ABSOLUTE_POSITION_OPERATOR_PLUS || operator === ABSOLUTE_POSITION_OPERATOR_PLUS_FIRST){
-                pixel_value+= previews_value - father_rect[name];
+                pixel_value+= previews_value - father_value;
         }
 
         if(operator === ABSOLUTE_POSITION_OPERATOR_MIN){
-                pixel_value = previews_value - pixel_value - father_rect[name];
+                pixel_value = previews_value - pixel_value - father_value;
         }
 
 
