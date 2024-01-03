@@ -33,7 +33,6 @@ function  absolute_position_generate_measures(element, measures, name, previews_
 
         let pixel_value = value;
         if(measure === ABSOLUTE_POSITION_PERCENT){
-                console.log(pixel_value)
                 let father = element.parentElement;
                 let father_rect = father.getBoundingClientRect();
                 let father_value = undefined;
