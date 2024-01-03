@@ -8,6 +8,7 @@ SOURCES = [
      'src/error.js',
     'src/algo.js',
     'src/parser.js',
+    'src/macros.js',
     'src/main.js'   
 ]
 LIB_NAME = 'AbsolutePosition'

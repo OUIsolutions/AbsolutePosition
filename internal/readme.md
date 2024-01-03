@@ -80,6 +80,13 @@ With the % prop, you can centralize or position  an element in every part you wa
 #### Full Centralization
 [Page of The Following Code](https://ouisolutions.github.io/AbsolutePosition/internal/exemples/full_centralization.html)
 
+## Macros 
+With Macros, you can define macros to replace the code into the tag 
+these it's useful when you want to avoid code repetition
+#ref:macros.html
+[Page of The Following Code](https://ouisolutions.github.io/AbsolutePosition/internal/exemples/macros.html)
+
+
 #ref:full_centralization.html
 
 ## Error Handling 

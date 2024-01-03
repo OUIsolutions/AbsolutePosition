@@ -75,6 +75,9 @@ function absolute_position_processElements() {
 
 
                 let attribute = element.getAttribute(ABSOLUTE_POSITION_ATTRIBUTE);
+                attribute = Absolute_position_replace_macros(attribute);
+
+
                 let browser_width = window.innerWidth;
                 let browser_height = window.innerHeight;
         
