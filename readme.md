@@ -5,7 +5,7 @@ elements on the screen in an extremely easy way.
 ## Running
 for running , you just need to put the cdn script tag into your project.:
 ```html
-<script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.64.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.65.js"></script>
 
 ```
 
@@ -31,7 +31,7 @@ these it's the example  of a simple div
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.64.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.65.js"></script>
 
 </head>
 <body>
@@ -73,14 +73,14 @@ As you can See the + operator increments 100px the value left of each div
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.64.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.65.js"></script>
 
 </head>
 <body>
 <div  APosition="$16:9(00px,100px,100px,100px)" style="background-color: red;"></div>
-<div  APosition="$16:9(+100px,100px,100px,100px)" style="background-color: blue;"></div>
-<div  APosition="$16:9(+100px,100px,100px,100px)" style="background-color: red;"></div>
-<div  APosition="$16:9(+100px,100px,100px,100px)" style="background-color: blue;"></div>
+<div  APosition="$16:9(+10px,100px,100px,100px)" style="background-color: blue;"></div>
+<div  APosition="$16:9(+10px,100px,100px,100px)" style="background-color: red;"></div>
+<div  APosition="$16:9(+10px,100px,100px,100px)" style="background-color: blue;"></div>
 
 </body>
 </html>
@@ -96,14 +96,14 @@ As you can See the + operator increments 100px the value left of each div
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.64.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.65.js"></script>
 
 </head>
 <body>
-        <div  APosition="$16:9(0px,00px,100px,100px)" style="background-color: red;"></div>
-        <div  APosition="$16:9(0px,+100px,100px,100px)" style="background-color: blue;"></div>
-        <div  APosition="$16:9(0px,+100px,100px,100px)" style="background-color: red;"></div>
-        <div  APosition="$16:9(0px,+100px,100px,100px)" style="background-color: blue;"></div>
+<div  APosition="$16:9(0px,00px,100px,100px)" style="background-color: red;"></div>
+<div  APosition="$16:9(0px,+10px,100px,100px)" style="background-color: blue;"></div>
+<div  APosition="$16:9(0px,+10px,100px,100px)" style="background-color: red;"></div>
+<div  APosition="$16:9(0px,+10px,100px,100px)" style="background-color: blue;"></div>
 
 </body>
 </html>
@@ -123,14 +123,15 @@ by using the **-** operators
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.64.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.65.js"></script>
 
 </head>
 <body>
-<div  APosition="$16:9( 800px,100px,100px,100px)" style="background-color: red;"></div>
-<div  APosition="$16:9(-100px,100px,100px,100px)" style="background-color: blue;"></div>
-<div  APosition="$16:9(-100px,100px,100px,100px)" style="background-color: red;"></div>
-<div  APosition="$16:9(-100px,100px,100px,100px)" style="background-color: blue;"></div>
+<div  APosition="$16:9(800px,100px,100px,100px)" style="background-color: red;"></div>
+<div  APosition="$16:9(-0px,100px,100px,100px)" style="background-color: blue;"></div>
+<div  APosition="$16:9(-0px,100px,100px,100px)" style="background-color: red;"></div>
+<div  APosition="$16:9(-0px,100px,100px,100px)" style="background-color: blue;"></div>
+
 
 </body>
 </html>
@@ -152,7 +153,7 @@ With the % prop, you can centralize or position  an element in every part you wa
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.64.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.65.js"></script>
 
 </head>
 <body>
@@ -175,7 +176,7 @@ With the % prop, you can centralize or position  an element in every part you wa
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.64.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.65.js"></script>
 
 </head>
 <body>
@@ -192,29 +193,6 @@ With the % prop, you can centralize or position  an element in every part you wa
 [Page of The Following Code](https://ouisolutions.github.io/AbsolutePosition/internal/exemples/full_centralization.html)
 
 
-### The f Operator
-the f operator worsks exacly like +, but evaluetes to 0, if its the first element (the +) operator, its usefull when
-dealling with arrays 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.64.js"></script>
-
-</head>
-<body>
-    <div  APosition="$16:9(f100px,100px,100px,100px)" style="background-color: red;"></div>
-    <div  APosition="$16:9(f100px,100px,100px,100px)" style="background-color: blue;"></div>
-    <div  APosition="$16:9(f100px,100px,100px,100px)" style="background-color: red;"></div>
-    <div  APosition="$16:9(f100px,100px,100px,100px)" style="background-color: blue;"></div>
-
-</body>
-</html>
-```
-
 
 ## Macros 
 With Macros, you can define macros to replace the code into the tag 
@@ -226,7 +204,7 @@ these it's useful when you want to avoid code repetition
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.64.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.65.js"></script>
 </head>
 <body>
 
@@ -251,7 +229,7 @@ these it's useful when you want to avoid code repetition
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.64.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.65.js"></script>
 
 </head>
 <body>
@@ -274,7 +252,7 @@ if some error happen on some tag it will be showed on console
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.64.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.65.js"></script>
 </head>
 <body>
         <div  APosition="$16:9ddpx,100px,200px,300px)" style="background-color: red;">
@@ -297,7 +275,7 @@ to false
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.64.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.65.js"></script>
 </head>
 <body>
 
