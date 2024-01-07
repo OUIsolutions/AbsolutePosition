@@ -51,7 +51,6 @@ function  absolute_position_generate_measures(element, measures, name, previews_
         let pixel_value = value;
         if(ABSOLUTE_POSITION_PERCENTS.includes(measure)){
                 let rect_element   = absolute_position_convert_percent(measure,name);
-                console.log(rect_element);
                 let father_size = father_rect[rect_element];
                 let fraction =(father_size/100);
                 pixel_value = (fraction * pixel_value);
@@ -75,7 +74,7 @@ function  absolute_position_generate_measures(element, measures, name, previews_
 
         //get the width of the brother
         if(operator === ABSOLUTE_POSITION_OPERATOR_PLUS || operator === ABSOLUTE_POSITION_OPERATOR_PLUS_FIRST){
-                pixel_value+= previews_value - father_value;
+                pixel_value += previews_value - father_value;
         }
 
         if(operator === ABSOLUTE_POSITION_OPERATOR_MIN){
