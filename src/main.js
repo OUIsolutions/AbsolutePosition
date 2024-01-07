@@ -87,12 +87,11 @@ function  absolute_position_generate_measures(element, measures, name, previews_
 
         //get the width of the brother
         if(operator === ABSOLUTE_POSITION_OPERATOR_PLUS ){
-                pixel_value += previews_size +previews_margin;
+                pixel_value += (previews_size + previews_margin);
         }
 
         if(operator === ABSOLUTE_POSITION_OPERATOR_MIN){
-
-                pixel_value = previews_size - pixel_value;
+                pixel_value-=  (previews_size - previews_margin);
         }
 
         element.style[name] = pixel_value + ABSOLUTE_POSITION_PX ;
