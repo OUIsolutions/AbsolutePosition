@@ -82,11 +82,6 @@ With the % prop, you can centralize or position  an element in every part you wa
 [Page of The Following Code](https://ouisolutions.github.io/AbsolutePosition/internal/exemples/full_centralization.html)
 
 
-### The f Operator
-the f operator worsks exacly like +, but evaluetes to 0, if its the first element (the +) operator, its usefull when
-dealling with arrays 
-#ref:next_to_each_other_horizontal_f_operator.html
-
 
 ## Macros 
 With Macros, you can define macros to replace the code into the tag 

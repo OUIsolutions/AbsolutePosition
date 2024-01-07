@@ -17,9 +17,7 @@ function  absolute_position_convert_percent(measure,name){
         }
 
 }
-function  absolute_position_convert_vh_and_vw(){
 
-}
 /**
  * @param {HTMLElement} element
  * @param {AbsolutePositionDimensions} measures
@@ -86,7 +84,7 @@ function  absolute_position_generate_measures(element, measures, name, previews_
 
 
         //get the width of the brother
-        if(operator === ABSOLUTE_POSITION_OPERATOR_PLUS || operator === ABSOLUTE_POSITION_OPERATOR_PLUS_FIRST){
+        if(operator === ABSOLUTE_POSITION_OPERATOR_PLUS ){
                 pixel_value += previews_size +previews_margin;
         }
 
