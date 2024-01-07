@@ -1,4 +1,26 @@
 
+
+
+function  absolute_position_convert_percent(name){
+
+        if(name === ABSOLUTE_POSITION_WIDTH_PERCENT){
+                return  ABSOLUTE_POSITION_WIDTH;
+        }
+        if(name ===ABSOLUTE_POSITION_HEIGHT_PERCENT){
+                return  ABSOLUTE_POSITION_HEIGHT;
+        }
+        if(ABSOLUTE_POSITION_HORIZONTAL_DIRECTIONS.includes(name)){
+                return  ABSOLUTE_POSITION_WIDTH;
+        }
+
+        if(ABSOLUTE_POSITION_VERTICAL_DIRECTIONS.includes(name)){
+                return  ABSOLUTE_POSITION_HEIGHT;
+        }
+
+}
+function  absolute_position_convert_vh_and_vw(){
+
+}
 /**
  * @param {HTMLElement} element
  * @param {AbsolutePositionDimensions} measures
@@ -15,57 +37,35 @@ function  absolute_position_generate_measures(element, measures, name, previews_
         let measure = current_measure.measure;
         let operator = current_measure.operator;
 
-        if(!previews_element && operator === ABSOLUTE_POSITION_OPERATOR_PLUS_FIRST){
-                element.style[name] = 0 + ABSOLUTE_POSITION_PX;
-                return;
+        let previews_value = 0;
+        if(previews_element){
+                let previews_rect = previews_element.getBoundingClientRect();
+                /**@type {number}*/
+                previews_value = previews_rect[name];
         }
 
-
-        if(!previews_element || !operator){
-                element.style[name] = value + measure;
-                return;
-        }
-
-        let previews_rect = previews_element.getBoundingClientRect();
-        /**@type {number}*/
-        let previews_value = previews_rect[name];
 
         let father = element.parentElement;
         let father_rect = father.getBoundingClientRect();
 
 
         let pixel_value = value;
-        if(measure === ABSOLUTE_POSITION_PERCENT){
-                if(ABSOLUTE_POSITION_HORIZONTAL_DIRECTIONS.includes(name)){
-                        measure = ABSOLUTE_POSITION_WIDTH_PERCENT;
-                }
-
-                if(ABSOLUTE_POSITION_VERTICAL_DIRECTIONS.includes(name)){
-                       measure = ABSOLUTE_POSITION_HEIGHT_PERCENT;
-
-                }
-        }
-
-        if(measure === ABSOLUTE_POSITION_WIDTH_PERCENT){
-
-                let father_value = father_rect.width;
-                let fraction =(father_value/100);
-                pixel_value = (fraction * pixel_value);
-
-        }
-        if(measure === ABSOLUTE_POSITION_HEIGHT_PERCENT){
-                let father_value = father_rect.height;
-                let fraction =(father_value/100);
+        if(ABSOLUTE_POSITION_PERCENTS.includes(measure)){
+                let rect_element   = absolute_position_convert_percent(name);
+                let father_size = father_rect[rect_element];
+                let fraction =(father_size/100);
                 pixel_value = (fraction * pixel_value);
         }
 
-        if(measure === ABSOLUTE_POSITION_VIEW_HEIGHT){
+        if(measure === ABSOLUTE_POSITION_VH){
                 pixel_value = (pixel_value/100)*browser_height;
         }
 
-        if(measure === ABSOLUTE_POSITION_VIEW_WIDTH){
+        if(measure === ABSOLUTE_POSITION_VW){
                 pixel_value = (pixel_value/100)*browser_width;
         }
+
+
 
         let father_value = 0;
         if(name === ABSOLUTE_POSITION_LEFT || name === ABSOLUTE_POSITION_TOP){
