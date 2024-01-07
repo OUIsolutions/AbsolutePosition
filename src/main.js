@@ -91,7 +91,17 @@ function  absolute_position_generate_measures(element, measures, name, previews_
         }
 
         if(operator === ABSOLUTE_POSITION_OPERATOR_MIN){
-                pixel_value-=  (previews_size - previews_margin);
+           let current_size = element.getBoundingClientRect();
+
+
+           if(name === ABSOLUTE_POSITION_LEFT){
+               pixel_value =  previews_margin  - current_size[ABSOLUTE_POSITION_WIDTH] - pixel_value;
+           }
+           if(name === ABSOLUTE_POSITION_TOP){
+               pixel_value =  previews_margin  - current_size[ABSOLUTE_POSITION_TOP] - pixel_value;
+           }
+
+
         }
 
         element.style[name] = pixel_value + ABSOLUTE_POSITION_PX ;
@@ -126,10 +136,10 @@ function absolute_position_processElements() {
                 let previews_element = element.previousElementSibling;
                 element.style.position = ABSOLUTE_POSITION_ABSOLUTE;
 
-                absolute_position_generate_measures(element, dimensions,ABSOLUTE_POSITION_LEFT,previews_element,browser_width,browser_height);
-                absolute_position_generate_measures(element,dimensions,ABSOLUTE_POSITION_TOP,previews_element,browser_width,browser_height);
                 absolute_position_generate_measures(element,dimensions,ABSOLUTE_POSITION_WIDTH,previews_element,browser_width,browser_height);
                 absolute_position_generate_measures(element,dimensions,ABSOLUTE_POSITION_HEIGHT,previews_element,browser_width,browser_height);
+                absolute_position_generate_measures(element, dimensions,ABSOLUTE_POSITION_LEFT,previews_element,browser_width,browser_height);
+                absolute_position_generate_measures(element,dimensions,ABSOLUTE_POSITION_TOP,previews_element,browser_width,browser_height);
 
         });
 
