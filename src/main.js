@@ -38,6 +38,7 @@ function  absolute_position_generate_measures(element, measures, name, previews_
         let previews_margin = 0;
         if(previews_element){
                 let previews_rect = previews_element.getBoundingClientRect();
+
                 if(ABSOLUTE_POSITION_HORIZONTAL_DIRECTIONS.includes(name)){
                         previews_size = previews_rect[ABSOLUTE_POSITION_WIDTH];
                 }
@@ -45,12 +46,13 @@ function  absolute_position_generate_measures(element, measures, name, previews_
                         previews_size = previews_rect[ABSOLUTE_POSITION_HEIGHT];
                 }
 
+
                 if(name === ABSOLUTE_POSITION_LEFT){
                         previews_margin = previews_rect[ABSOLUTE_POSITION_LEFT];
                 }
 
-                if(name === ABSOLUTE_POSITION_HEIGHT){
-                        previews_margin = previews_rect[ABSOLUTE_POSITION_HEIGHT];
+                if(name === ABSOLUTE_POSITION_TOP){
+                        previews_margin = previews_rect[ABSOLUTE_POSITION_TOP];
                 }
 
 
@@ -92,7 +94,6 @@ function  absolute_position_generate_measures(element, measures, name, previews_
 
                 pixel_value = previews_size - pixel_value;
         }
-
 
         element.style[name] = pixel_value + ABSOLUTE_POSITION_PX ;
 
