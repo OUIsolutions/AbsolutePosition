@@ -36,20 +36,27 @@ function  absolute_position_generate_measures(element, measures, name, previews_
 
         let pixel_value = value;
         if(measure === ABSOLUTE_POSITION_PERCENT){
-
-                let father_value = undefined;
-
                 if(ABSOLUTE_POSITION_HORIZONTAL_DIRECTIONS.includes(name)){
-                        father_value = father_rect.width;
+                        measure = ABSOLUTE_POSITION_WIDTH_PERCENT;
                 }
 
                 if(ABSOLUTE_POSITION_VERTICAL_DIRECTIONS.includes(name)){
-                        father_value = father_rect.height;
-                }
+                       measure = ABSOLUTE_POSITION_HEIGHT_PERCENT;
 
+                }
+        }
+
+        if(measure === ABSOLUTE_POSITION_WIDTH_PERCENT){
+
+                let father_value = father_rect.width;
                 let fraction =(father_value/100);
                 pixel_value = (fraction * pixel_value);
 
+        }
+        if(measure === ABSOLUTE_POSITION_HEIGHT_PERCENT){
+                let father_value = father_rect.height;
+                let fraction =(father_value/100);
+                pixel_value = (fraction * pixel_value);
         }
 
         if(measure === ABSOLUTE_POSITION_VIEW_HEIGHT){
