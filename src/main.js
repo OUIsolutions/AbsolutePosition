@@ -1,12 +1,11 @@
 
 
 
-function  absolute_position_convert_percent(name){
-
-        if(name === ABSOLUTE_POSITION_WIDTH_PERCENT){
+function  absolute_position_convert_percent(measure,name){
+        if(measure === ABSOLUTE_POSITION_WIDTH_PERCENT){
                 return  ABSOLUTE_POSITION_WIDTH;
         }
-        if(name ===ABSOLUTE_POSITION_HEIGHT_PERCENT){
+        if(measure ===ABSOLUTE_POSITION_HEIGHT_PERCENT){
                 return  ABSOLUTE_POSITION_HEIGHT;
         }
         if(ABSOLUTE_POSITION_HORIZONTAL_DIRECTIONS.includes(name)){
@@ -51,7 +50,8 @@ function  absolute_position_generate_measures(element, measures, name, previews_
 
         let pixel_value = value;
         if(ABSOLUTE_POSITION_PERCENTS.includes(measure)){
-                let rect_element   = absolute_position_convert_percent(name);
+                let rect_element   = absolute_position_convert_percent(measure,name);
+                console.log(rect_element);
                 let father_size = father_rect[rect_element];
                 let fraction =(father_size/100);
                 pixel_value = (fraction * pixel_value);
