@@ -36,7 +36,7 @@ function  absolute_position_generate_measures(
     previews_element,
     browser_width,
     browser_height){
-        /**@type {SantosDummontDimension}*/
+        /**@type {AbsolutePositionDimension}*/
         let current_measure = measures[name];
         let value  =current_measure.value;
         let measure = current_measure.measure;
@@ -93,15 +93,15 @@ function  absolute_position_generate_measures(
         }
 
         if(operator === ABSOLUTE_POSITION_OPERATOR_MIN){
-           let current_size = element.getBoundingClientRect();
+                let current_size = element.getBoundingClientRect();
 
 
-           if(name === ABSOLUTE_POSITION_LEFT){
-               pixel_value =  previews_margin  - current_size[ABSOLUTE_POSITION_WIDTH] - pixel_value;
-           }
-           if(name === ABSOLUTE_POSITION_TOP){
-               pixel_value =  previews_margin  - current_size[ABSOLUTE_POSITION_TOP] - pixel_value;
-           }
+                if(name === ABSOLUTE_POSITION_LEFT){
+                        pixel_value =  previews_margin  - current_size[ABSOLUTE_POSITION_WIDTH] - pixel_value;
+                }
+                if(name === ABSOLUTE_POSITION_TOP){
+                        pixel_value =  previews_margin  - current_size[ABSOLUTE_POSITION_TOP] - pixel_value;
+                }
 
 
         }
@@ -111,6 +111,87 @@ function  absolute_position_generate_measures(
 
 
 }
+
+
+/**
+ * @param {HTMLElement} element
+ * @param {AbsolutePositionDimension} current_measure
+ * @param {HTMLElement} father
+ * @param {HTMLElement} previews_element
+ * @param {number} browser_width
+ * @param {number} browser_height
+ *
+ * */
+function  absolute_position_generate_left_measures(
+    element,
+    current_measure,
+    father,
+    previews_element,
+    browser_width,
+    browser_height){
+
+
+        let value  =current_measure.value;
+        let measure = current_measure.measure;
+        let operator = current_measure.operator;
+
+        let father_rect = father.getBoundingClientRect();
+        let previews_width = 0;
+        let previews_left = 0;
+
+        if(previews_element){
+
+                let previews_rect = previews_element.getBoundingClientRect();
+                previews_width = previews_rect[ABSOLUTE_POSITION_WIDTH];
+                previews_left = previews_rect[ABSOLUTE_POSITION_LEFT] - father_rect[ABSOLUTE_POSITION_LEFT];
+
+
+
+
+
+        }
+
+        let pixel_value = value;
+
+        if(ABSOLUTE_POSITION_PERCENTS.includes(measure)){
+                let formatted_name   = absolute_position_convert_percent(measure,ABSOLUTE_POSITION_LEFT);
+                let father_size = father_rect[formatted_name];
+                let fraction =(father_size/100);
+                pixel_value = (fraction * pixel_value);
+        }
+
+        if(measure === ABSOLUTE_POSITION_VH){
+                pixel_value = (pixel_value/100)*browser_height;
+        }
+
+        if(measure === ABSOLUTE_POSITION_VW){
+                pixel_value = (pixel_value/100)*browser_width;
+        }
+
+        //get the width of the brother
+        if(operator === ABSOLUTE_POSITION_OPERATOR_PLUS ){
+                pixel_value += previews_left + previews_width;
+        }
+
+
+        if(operator === ABSOLUTE_POSITION_OPERATOR_MIN){
+           let current_size = element.getBoundingClientRect();
+
+           if(name === ABSOLUTE_POSITION_LEFT){
+               pixel_value =  previews_left  - current_size[ABSOLUTE_POSITION_WIDTH] - pixel_value;
+           }
+           if(name === ABSOLUTE_POSITION_TOP){
+               pixel_value =  previews_left - current_size[ABSOLUTE_POSITION_TOP] - pixel_value;
+           }
+
+        }
+
+        element.style[ABSOLUTE_POSITION_LEFT] = pixel_value + ABSOLUTE_POSITION_PX ;
+
+
+}
+
+
 
 function absolute_position_processElements() {
         let elementosRefer = document.querySelectorAll(ABSOLUTE_POSITION_QUERY_SELECTOR);
@@ -159,10 +240,9 @@ function absolute_position_processElements() {
                     browser_height
                 );
 
-                absolute_position_generate_measures(
+                absolute_position_generate_left_measures(
                     element,
-                    dimensions,
-                    ABSOLUTE_POSITION_LEFT,
+                    dimensions[ABSOLUTE_POSITION_LEFT],
                     father,
                     previews_element,
                     browser_width,

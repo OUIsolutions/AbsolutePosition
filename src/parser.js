@@ -1,5 +1,5 @@
 /**
- * @typedef SantosDummontDimension
+ * @typedef AbsolutePositionDimension
  * @property {number} value
  * @property {string} measure
  * @property {string} operator
@@ -8,10 +8,10 @@
 
 /**
  *@typedef {object} AbsolutePositionDimensions
- * @property {SantosDummontDimension} left
- * @property {SantosDummontDimension} heigth
- * @property {SantosDummontDimension} width
- * @property {SantosDummontDimension} height
+ * @property {AbsolutePositionDimension} left
+ * @property {AbsolutePositionDimension} heigth
+ * @property {AbsolutePositionDimension} width
+ * @property {AbsolutePositionDimension} height
  * */
 
 
@@ -49,7 +49,7 @@ function absolute_position_find_or_create_dimension(element, horizontal_ratio, v
 /**
  @param {string} value
 
- @return {SantosDummontDimension}
+ @return {AbsolutePositionDimension}
  */
 function absolute_position_generate_divided_number(value){
 
