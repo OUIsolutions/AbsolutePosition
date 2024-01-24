@@ -70,3 +70,28 @@ function absolute_position_find_closest_measure(measures, browser_width, browser
 
     return closest;
 }
+
+/**
+ * @param {HTMLElement} element
+ * */
+function absolute_position_find_father(element){
+    /**@type {HTMLElement}*/
+    let father = element.parentElement;
+
+    while(true){
+
+        if(father.hasAttribute(ABSOLUTE_POSITION_ATTRIBUTE)){
+            if(father.style.display !== 'none'){
+                break;
+            }
+        }
+        if(father === document.body){
+            break;
+        }
+
+        father = father.parentElement;
+
+    }
+
+    return father;
+}

@@ -58,8 +58,7 @@ function  absolute_position_generate_measures(element, measures, name, previews_
 
         }
 
-
-        let father = element.parentElement;
+        let father = absolute_position_find_father(element);
         let father_rect = father.getBoundingClientRect();
 
 
@@ -78,12 +77,6 @@ function  absolute_position_generate_measures(element, measures, name, previews_
         if(measure === ABSOLUTE_POSITION_VW){
                 pixel_value = (pixel_value/100)*browser_width;
         }
-        /*
-        let father_value = 0;
-        if(name === ABSOLUTE_POSITION_LEFT || name === ABSOLUTE_POSITION_TOP){
-                father_value = father_rect[name];
-        }*/
-
 
         //get the width of the brother
         if(operator === ABSOLUTE_POSITION_OPERATOR_PLUS ){
@@ -109,6 +102,7 @@ function  absolute_position_generate_measures(element, measures, name, previews_
 
 
 }
+
 function absolute_position_processElements() {
         let elementosRefer = document.querySelectorAll(ABSOLUTE_POSITION_QUERY_SELECTOR);
 
