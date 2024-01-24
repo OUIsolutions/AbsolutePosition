@@ -123,6 +123,7 @@ function  absolute_position_retrive_element_or_child_if_is_aposition(element){
 
 /**
  * @param {HTMLElement} element
+ * @return {HTMLElement || undefined}
  * */
 function absolute_position_find_previews_element(element){
     /**@type {HTMLElement}*/
