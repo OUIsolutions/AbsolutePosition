@@ -78,16 +78,18 @@ function absolute_position_find_father(element){
     /**@type {HTMLElement}*/
     let father = element.parentElement;
 
-    while(true){
+    while(father){
+
+        if(father === document.body){
+            break;
+        }
 
         if(father.hasAttribute(ABSOLUTE_POSITION_ATTRIBUTE)){
             if(father.style.display !== 'none'){
                 break;
             }
         }
-        if(father === document.body){
-            break;
-        }
+
 
         father = father.parentElement;
 
@@ -99,19 +101,59 @@ function absolute_position_find_father(element){
 /**
  * @param {HTMLElement} element
  * */
+function  absolute_position_retrive_element_or_child_if_is_aposition(element){
+
+    if(element.style.display === 'none'){
+        return undefined;
+    }
+
+    if(element.hasAttribute(ABSOLUTE_POSITION_ATTRIBUTE)){
+        return  element;
+    }
+
+    for(let i = 0; i < element.children.length;i++){
+      let current =  element.children[i];
+
+      let result =absolute_position_retrive_element_or_child_if_is_aposition(current);
+      if(result){
+          return  result;
+      }
+    }
+}
+
+/**
+ * @param {HTMLElement} element
+ * */
 function absolute_position_find_previews_element(element){
     /**@type {HTMLElement}*/
-    let previews = element.previousElementSibling;
-
+    let previews =element;
+    let father = absolute_position_find_father(element);
     while(previews){
 
-        if(previews.hasAttribute(ABSOLUTE_POSITION_ATTRIBUTE)){
-            if(previews.style.display !== 'none'){
-                break;
-            }
+        if(previews === document.body){
+            return  undefined;
         }
-        previews = previews.previousElementSibling;
+
+        if(previews === father){
+            return  undefined;
+        }
+
+
+        let possible_previews = previews.previousElementSibling;
+
+        if(!possible_previews){
+            previews = previews.parentElement;
+            continue;
+        }
+        
+        previews = possible_previews;
+        let possible = absolute_position_retrive_element_or_child_if_is_aposition(
+            previews
+        );
+        if(possible){
+            return  possible;
+        }
 
     }
-    return previews;
+
 }
