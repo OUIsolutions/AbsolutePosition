@@ -95,3 +95,23 @@ function absolute_position_find_father(element){
 
     return father;
 }
+
+/**
+ * @param {HTMLElement} element
+ * */
+function absolute_position_find_previews_element(element){
+    /**@type {HTMLElement}*/
+    let previews = element.previousElementSibling;
+
+    while(previews){
+
+        if(previews.hasAttribute(ABSOLUTE_POSITION_ATTRIBUTE)){
+            if(previews.style.display !== 'none'){
+                break;
+            }
+        }
+        previews = previews.previousElementSibling;
+
+    }
+    return previews;
+}

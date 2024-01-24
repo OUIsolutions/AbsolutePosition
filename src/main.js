@@ -137,7 +137,7 @@ function absolute_position_processElements() {
                 let father = absolute_position_find_father(element);
 
                 let dimensions = closest.dimensions;
-                let previews_element = element.previousElementSibling;
+                let previews_element = absolute_position_find_previews_element(element);
                 element.style.position = ABSOLUTE_POSITION_ABSOLUTE;
 
                 absolute_position_generate_measures(
