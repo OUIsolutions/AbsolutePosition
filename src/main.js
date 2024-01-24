@@ -18,6 +18,7 @@ function  absolute_position_convert_percent(measure,name){
 
 }
 
+
 /**
  * @param {HTMLElement} element
  * @param {AbsolutePositionDimensions} measures
@@ -113,6 +114,7 @@ function  absolute_position_generate_measures(
 }
 
 
+
 /**
  * @param {HTMLElement} element
  * @param {AbsolutePositionDimension} current_measure
@@ -144,8 +146,6 @@ function  absolute_position_generate_left_measures(
                 let previews_rect = previews_element.getBoundingClientRect();
                 previews_width = previews_rect[ABSOLUTE_POSITION_WIDTH];
                 previews_left = previews_rect[ABSOLUTE_POSITION_LEFT] - father_rect[ABSOLUTE_POSITION_LEFT];
-
-
 
 
 
