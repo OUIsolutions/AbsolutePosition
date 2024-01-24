@@ -22,12 +22,20 @@ function  absolute_position_convert_percent(measure,name){
  * @param {HTMLElement} element
  * @param {AbsolutePositionDimensions} measures
  * @param {string} name
+ * @param {HTMLElement} father
  * @param {HTMLElement} previews_element
  * @param {number} browser_width
  * @param {number} browser_height
  *
  * */
-function  absolute_position_generate_measures(element, measures, name, previews_element, browser_width, browser_height){
+function  absolute_position_generate_measures(
+    element,
+    measures,
+    name,
+    father,
+    previews_element,
+    browser_width,
+    browser_height){
         /**@type {SantosDummontDimension}*/
         let current_measure = measures[name];
         let value  =current_measure.value;
@@ -36,12 +44,14 @@ function  absolute_position_generate_measures(element, measures, name, previews_
 
         let previews_size = 0;
         let previews_margin = 0;
+
         if(previews_element){
                 let previews_rect = previews_element.getBoundingClientRect();
 
                 if(ABSOLUTE_POSITION_HORIZONTAL_DIRECTIONS.includes(name)){
                         previews_size = previews_rect[ABSOLUTE_POSITION_WIDTH];
                 }
+
                 if(ABSOLUTE_POSITION_VERTICAL_DIRECTIONS.includes(name)){
                         previews_size = previews_rect[ABSOLUTE_POSITION_HEIGHT];
                 }
@@ -58,7 +68,6 @@ function  absolute_position_generate_measures(element, measures, name, previews_
 
         }
 
-        let father = absolute_position_find_father(element);
         let father_rect = father.getBoundingClientRect();
 
 
@@ -125,15 +134,50 @@ function absolute_position_processElements() {
 
                 let closest = absolute_position_find_closest_measure(measures,browser_width,browser_height);
 
+                let father = absolute_position_find_father(element);
 
                 let dimensions = closest.dimensions;
                 let previews_element = element.previousElementSibling;
                 element.style.position = ABSOLUTE_POSITION_ABSOLUTE;
 
-                absolute_position_generate_measures(element,dimensions,ABSOLUTE_POSITION_WIDTH,previews_element,browser_width,browser_height);
-                absolute_position_generate_measures(element,dimensions,ABSOLUTE_POSITION_HEIGHT,previews_element,browser_width,browser_height);
-                absolute_position_generate_measures(element, dimensions,ABSOLUTE_POSITION_LEFT,previews_element,browser_width,browser_height);
-                absolute_position_generate_measures(element,dimensions,ABSOLUTE_POSITION_TOP,previews_element,browser_width,browser_height);
+                absolute_position_generate_measures(
+                    element,
+                    dimensions,
+                    ABSOLUTE_POSITION_WIDTH,
+                    father,
+                    previews_element,
+                    browser_width,
+                    browser_height
+                );
+
+                absolute_position_generate_measures(
+                    element,dimensions,
+                    ABSOLUTE_POSITION_HEIGHT,
+                    father,
+                    previews_element,
+                    browser_width,
+                    browser_height
+                );
+
+                absolute_position_generate_measures(
+                    element,
+                    dimensions,
+                    ABSOLUTE_POSITION_LEFT,
+                    father,
+                    previews_element,
+                    browser_width,
+                    browser_height
+                );
+
+                absolute_position_generate_measures(
+                    element,
+                    dimensions,
+                    ABSOLUTE_POSITION_TOP,
+                    father,
+                    previews_element,
+                    browser_width,
+                    browser_height
+                );
 
         });
 
