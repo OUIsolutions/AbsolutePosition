@@ -82,6 +82,17 @@ With the % prop, you can centralize or position  an element in every part you wa
 [Page of The Following Code](https://ouisolutions.github.io/AbsolutePosition/internal/exemples/full_centralization.html)
 
 
+#### Mod Operator
+With the mod operator:**%**  we can determine diferents behaviors based on current iteration
+of , allowing simulate flexbox behavior
+
+#ref:mod.html
+
+[Page of The Following Code](https://ouisolutions.github.io/AbsolutePosition/internal/exemples/mod.html)
+
+
+
+
 
 ## Macros 
 With Macros, you can define macros to replace the code into the tag 
