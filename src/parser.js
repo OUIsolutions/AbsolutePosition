@@ -69,7 +69,7 @@ function absolute_position_generate_divided_number(value){
     if(value === ABSOLUTE_POSITION_EMPTY_STRING){
         throw new AbsolutePositionError(ABSOLUTE_POSITION_ARGS_NOT_PASSED);
     }
-    if(value === ABSOLUTE_POSITION_SAME){
+    if(value === ABSOLUTE_POSITION_LAST){
         return {same:true};
     }
 
