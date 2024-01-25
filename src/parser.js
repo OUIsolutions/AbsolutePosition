@@ -69,11 +69,10 @@ function absolute_position_generate_divided_number(value){
     if(value === ABSOLUTE_POSITION_EMPTY_STRING){
         throw new AbsolutePositionError(ABSOLUTE_POSITION_ARGS_NOT_PASSED);
     }
-
     if(value === ABSOLUTE_POSITION_SAME){
         return {same:true};
     }
-    
+
 
     let num_string = ABSOLUTE_POSITION_EMPTY_STRING;
     let operator = undefined;
@@ -191,10 +190,10 @@ function  absolute_position_generate_measure(final_array, current){
         throw new AbsolutePositionError(ABSOLUTE_POSITION_MISSING_DIVIDER);
     }
 
-    let left =absolute_position_generate_divided_number(divided_numbers[0]);
-    let top =absolute_position_generate_divided_number(divided_numbers[1]);
     let width =absolute_position_generate_divided_number(divided_numbers[2]);
     let height =absolute_position_generate_divided_number(divided_numbers[3])
+    let left =absolute_position_generate_divided_number(divided_numbers[0]);
+    let top =absolute_position_generate_divided_number(divided_numbers[1]);
 
     let created = absolute_position_find_or_create_dimension(
         final_array,

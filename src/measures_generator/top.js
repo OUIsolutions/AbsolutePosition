@@ -35,7 +35,11 @@ function  absolute_position_generate_top_measures(
         }
     }
 
+    if(current_measure.same){
 
+        element.style[ABSOLUTE_POSITION_TOP] = previews_top +ABSOLUTE_POSITION_PX;
+
+    }
     let pixel_value = absolute_position_convert_pixel_value(
         value,
         measure,

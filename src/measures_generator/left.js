@@ -16,6 +16,8 @@ function  absolute_position_generate_left_measures(
     browser_width,
     browser_height){
 
+
+
     let value  =current_measure.value;
     let measure = current_measure.measure;
     let operator = current_measure.operator;
@@ -32,6 +34,11 @@ function  absolute_position_generate_left_measures(
         if(father !== document.body){
             previews_left-=father_rect[ABSOLUTE_POSITION_LEFT];
         }
+
+    }
+    if(current_measure.same){
+
+        element.style[ABSOLUTE_POSITION_LEFT] = previews_left +ABSOLUTE_POSITION_PX;
 
     }
 
