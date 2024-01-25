@@ -56,7 +56,7 @@ function absolute_position_processElements() {
                 absolute_position_generate_left_measures(
                     element,
                     dimensions[ABSOLUTE_POSITION_LEFT],
-                    father_rect,
+                    father,
                     previews_rect,
                     browser_width,
                     browser_height
@@ -65,7 +65,7 @@ function absolute_position_processElements() {
                 absolute_position_generate_top_measures(
                     element,
                     dimensions[ABSOLUTE_POSITION_TOP],
-                    father_rect,
+                    father,
                     previews_rect,
                     browser_width,
                     browser_height

@@ -5,7 +5,7 @@
 /**
  * @param {HTMLElement} element
  * @param {AbsolutePositionDimension} current_measure
- * @param {DOMRect} father_rect
+ * @param {HTMLElement} father
  * @param {DOMRect} previews_rect
  * @param {number} browser_width
  * @param {number} browser_height
@@ -14,7 +14,7 @@
 function  absolute_position_generate_top_measures(
     element,
     current_measure,
-    father_rect,
+    father,
     previews_rect,
     browser_width,
     browser_height){
@@ -25,10 +25,14 @@ function  absolute_position_generate_top_measures(
 
     let previews_height = 0;
     let previews_top = 0;
-
+    let father_rect = father.getBoundingClientRect();
     if(previews_rect){
         previews_height = previews_rect[ABSOLUTE_POSITION_HEIGHT];
-        previews_top = previews_rect[ABSOLUTE_POSITION_TOP] - father_rect[ABSOLUTE_POSITION_TOP];
+        previews_top = previews_rect[ABSOLUTE_POSITION_TOP]
+
+        if(father !== document.body){
+            previews_top-=father_rect[ABSOLUTE_POSITION_TOP];
+        }
     }
 
 
@@ -48,7 +52,8 @@ function  absolute_position_generate_top_measures(
 
     if(operator === ABSOLUTE_POSITION_OPERATOR_MIN){
         let current_size = element.getBoundingClientRect();
-        pixel_value =  previews_top  - current_size[ABSOLUTE_POSITION_HEIGHT] - pixel_value;
+        pixel_value = pixel_value - (previews_top -current_size[ABSOLUTE_POSITION_TOP]);
+        pixel_value = Math.abs(pixel_value);
     }
 
 
