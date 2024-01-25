@@ -27,6 +27,11 @@ function  absolute_position_generate_height_measures(
         previews_height = previews_rect[ABSOLUTE_POSITION_HEIGHT];
     }
 
+    if(current_measure.same){
+        element.style[ABSOLUTE_POSITION_HEIGHT] = previews_height +ABSOLUTE_POSITION_PX;
+        return;
+    }
+
 
     let pixel_value = absolute_position_convert_pixel_value(
         value,

@@ -28,6 +28,12 @@ function  absolute_position_generate_width_measures(
         previews_width = previews_rect[ABSOLUTE_POSITION_WIDTH];
     }
 
+    if(current_measure.same){
+        element.style[ABSOLUTE_POSITION_WIDTH] = previews_width +ABSOLUTE_POSITION_PX;
+        return;
+    }
+
+
     let pixel_value = absolute_position_convert_pixel_value(
         value,
         measure,

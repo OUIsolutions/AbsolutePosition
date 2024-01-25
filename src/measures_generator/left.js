@@ -39,7 +39,7 @@ function  absolute_position_generate_left_measures(
     if(current_measure.same){
 
         element.style[ABSOLUTE_POSITION_LEFT] = previews_left +ABSOLUTE_POSITION_PX;
-
+        return;
     }
 
     let pixel_value = absolute_position_convert_pixel_value(
