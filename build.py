@@ -7,6 +7,8 @@ SOURCES = [
     'src/constants.js',
      'src/error.js',
     'src/algo.js',
+     'src/element_finding.js',
+
     'src/parser.js',
     'src/macros.js',
     'src/measures_generator/converters.js',
