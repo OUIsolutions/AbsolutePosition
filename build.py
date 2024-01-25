@@ -9,7 +9,12 @@ SOURCES = [
     'src/algo.js',
     'src/parser.js',
     'src/macros.js',
-    'src/main.js'   
+    'src/measures_generator/converters.js',
+    'src/measures_generator/width.js',
+    'src/measures_generator/height.js',
+    'src/measures_generator/top.js',
+    'src/measures_generator/left.js',
+    'src/main.js'
 ]
 LIB_NAME = 'AbsolutePosition'
 REPO_NAME = 'OUIsolutions/AbsolutePosition'
