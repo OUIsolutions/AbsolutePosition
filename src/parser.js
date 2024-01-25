@@ -217,6 +217,7 @@ function  absolute_position_parser(element,value){
         let final_array = [];
         let formatted_value = value.replaceAll(ABSOLUTE_POSITION_SPACE,ABSOLUTE_POSITION_EMPTY_STRING);
         formatted_value = formatted_value.replaceAll(ABSOLUTE_POSITION_BREAK_LINE,ABSOLUTE_POSITION_EMPTY_STRING);
+        formatted_value = formatted_value.toLowerCase();
         let elements = formatted_value.split(ABSOLUTE_POSITION_START_CHAR);
         elements = elements.filter(v => v !== ABSOLUTE_POSITION_EMPTY_STRING);
 
