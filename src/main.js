@@ -34,7 +34,7 @@ function absolute_position_processElements() {
                 }
                 element.style.position = ABSOLUTE_POSITION_ABSOLUTE;
 
-                absolute_position_generate_heght_measures(
+                absolute_position_generate_height_measures(
                     element,
                     dimensions[ABSOLUTE_POSITION_HEIGHT],
                     father_rect,

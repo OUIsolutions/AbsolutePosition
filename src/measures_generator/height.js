@@ -9,7 +9,7 @@
  * @param {number} browser_height
  *
  * */
-function  absolute_position_generate_heght_measures(
+function  absolute_position_generate_height_measures(
     element,
     current_measure,
     father_rect,
@@ -28,7 +28,14 @@ function  absolute_position_generate_heght_measures(
     }
 
 
-    let pixel_value = absolute_position_convert_pixel_value(value,measure,father_rect,browser_width,browser_height);
+    let pixel_value = absolute_position_convert_pixel_value(
+        value,
+        measure,
+        ABSOLUTE_POSITION_HEIGHT,
+        father_rect,
+        browser_width,
+        browser_height
+    );
 
     //get the width of the brother
     if(operator === ABSOLUTE_POSITION_OPERATOR_PLUS ){

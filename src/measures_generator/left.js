@@ -28,7 +28,14 @@ function  absolute_position_generate_left_measures(
         previews_left = previews_rect[ABSOLUTE_POSITION_LEFT] - father_rect[ABSOLUTE_POSITION_LEFT];
     }
 
-    let pixel_value = absolute_position_convert_pixel_value(value,measure,father_rect,browser_width,browser_height);
+    let pixel_value = absolute_position_convert_pixel_value(
+        value,
+        measure,
+        ABSOLUTE_POSITION_LEFT,
+        father_rect,
+        browser_width,
+        browser_height
+    );
 
     //get the width of the brother
     if(operator === ABSOLUTE_POSITION_OPERATOR_PLUS ){

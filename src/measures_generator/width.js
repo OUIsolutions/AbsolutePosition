@@ -28,7 +28,14 @@ function  absolute_position_generate_width_measures(
         previews_width = previews_rect[ABSOLUTE_POSITION_WIDTH];
     }
 
-    let pixel_value = absolute_position_convert_pixel_value(value,measure,father_rect,browser_width,browser_height);
+    let pixel_value = absolute_position_convert_pixel_value(
+        value,
+        measure,
+        ABSOLUTE_POSITION_WIDTH,
+        father_rect,
+        browser_width,
+        browser_height
+    );
 
     //get the width of the brother
     if(operator === ABSOLUTE_POSITION_OPERATOR_PLUS ){
