@@ -209,6 +209,7 @@ of , allowing simulate flexbox behavior
 
 </head>
 <body>
+<div APosition="$(0,0,100vw,100vh)">
 
 <div  APosition="$16:9 %3(10%,+10%,20%,15%) $16:9 (+10%,+-15%,20%,15%)" style="background-color: red"></div>
 <div  APosition="$16:9 %3(10%,+10%,20%,15%) $16:9 (+10%,+-15%,20%,15%)" style="background-color: red"></div>
@@ -218,6 +219,7 @@ of , allowing simulate flexbox behavior
 <div  APosition="$16:9 %3(10%,+10%,20%,15%) $16:9 (+10%,+-15%,20%,15%)" style="background-color: red"></div>
 <div  APosition="$16:9 %3(10%,+10%,20%,15%) $16:9 (+10%,+-15%,20%,15%)" style="background-color: red"></div>
 
+</div>
 
 </body>
 </html>
