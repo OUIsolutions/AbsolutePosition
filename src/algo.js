@@ -68,6 +68,7 @@ function absolute_position_find_closest_measure(
             closest = measure;
             closest_dif = dif;
         }
+
         if(dif === closest_dif && total_previews && measure.mod){
             if(total_previews % measure.mod === 0){
                 closest = measure;

@@ -20,10 +20,17 @@ function absolute_position_processElements() {
                         return;
                 }
 
+                let total_previews = undefined;
+
+                if(measures.some(m => m.mod)){
+                      total_previews = absolute_position_count_previews(element);
+                }
+
                 let closest = absolute_position_find_closest_measure(
                     measures,
                     browser_width,
-                    browser_height
+                    browser_height,
+                    total_previews
                 );
 
                 let father = absolute_position_find_father(element);

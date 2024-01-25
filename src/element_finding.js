@@ -85,3 +85,16 @@ function absolute_position_find_previews_element(element){
     }
 
 }
+/**
+ * @param {HTMLElement} element
+ * @return {number}
+ * */
+function absolute_position_count_previews(element){
+    let total = 0;
+    let previews = absolute_position_find_previews_element(element);
+    while (previews){
+        total+=1;
+        previews = absolute_position_find_previews_element(previews);
+    }
+    return  total;
+}
