@@ -1,5 +1,6 @@
 /**
  * @typedef AbsolutePositionDimension
+ * @property {boolean} same
  * @property {number} value
  * @property {string} measure
  * @property {string} operator
@@ -64,10 +65,15 @@ function absolute_position_find_or_create_dimension(
 function absolute_position_generate_divided_number(value){
 
 
+
     if(value === ABSOLUTE_POSITION_EMPTY_STRING){
         throw new AbsolutePositionError(ABSOLUTE_POSITION_ARGS_NOT_PASSED);
     }
 
+    if(value === ABSOLUTE_POSITION_SAME){
+        return {same:true};
+    }
+    
 
     let num_string = ABSOLUTE_POSITION_EMPTY_STRING;
     let operator = undefined;
@@ -128,6 +134,7 @@ function absolute_position_generate_divided_number(value){
     }
 
     return {
+        same:false,
         measure:dimensions,
         value:num,
         operator:operator
