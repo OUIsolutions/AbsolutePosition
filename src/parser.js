@@ -20,6 +20,7 @@
  * @property {number} horizontal_ratio
  * @property {number} vertical_ratio
  * @property {number} mod
+ * @property {string} assignature
  * @property {AbsolutePositionDimensions} dimensions
  * */
 

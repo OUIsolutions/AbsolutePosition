@@ -1,8 +1,8 @@
 
 
+
 function absolute_position_processElements() {
         let elementosRefer = document.querySelectorAll(ABSOLUTE_POSITION_QUERY_SELECTOR);
-
         elementosRefer.forEach(element => {
 
 

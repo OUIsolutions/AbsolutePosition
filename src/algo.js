@@ -41,6 +41,28 @@ function absolute_position_returns_difference(element1, element2){
    return  element2 - element1;
 }
 
+
+
+/**
+ * @param {AbsolutePositionProp} measure
+ * @param {AbsolutePositionAspectRatio} browser_ratio
+ * @param {number} total_previews
+ * */
+function absolute_position_create_assignature(measure,browser_ratio,total_previews){
+    let measure_ratio = absolute_position_convert_aspect_ratio(measure.horizontal_ratio, measure.vertical_ratio);
+    let width_dif = absolute_position_returns_difference(measure_ratio.width,browser_ratio.width);
+    let highest_dif = absolute_position_returns_difference(measure_ratio.height,browser_ratio.height);
+    let dif = width_dif+highest_dif;
+
+
+
+    if(total_previews !==  undefined &&measure.mod){
+        let rest = total_previews % measure.mod;
+        return `${dif}.${rest}`
+    }
+    return `${dif}.01`
+}
+
 /**
  * @param {Array<AbsolutePositionProp>} measures
  * @param {number}browser_width
@@ -54,36 +76,26 @@ function absolute_position_find_closest_measure(
     browser_height,
     total_previews
 ) {
-    let closest = undefined;
-    let closest_dif = undefined;
+
+
+
     let browser_ratio = absolute_position_convert_aspect_ratio(browser_width, browser_height);
-
-    for(let measure of measures){
-        let measure_ratio = absolute_position_convert_aspect_ratio(measure.horizontal_ratio, measure.vertical_ratio);
-        let width_dif = absolute_position_returns_difference(measure_ratio.width,browser_ratio.width);
-        let highest_dif = absolute_position_returns_difference(measure_ratio.height,browser_ratio.height);
-        let dif = width_dif+highest_dif;
-
-        if(closest_dif=== undefined){
-            closest = measure;
-            closest_dif = dif;
-        }
-
-        if(dif === closest_dif && total_previews && measure.mod){
-            if(total_previews % measure.mod === 0){
-                closest = measure;
-                closest_dif = dif;
-            }
-        }
-
-        if(dif < closest_dif){
-            closest = measure;
-            closest_dif = dif;
-        }
+    measures.forEach(v => v.assignature = absolute_position_create_assignature(v,browser_ratio,total_previews))
 
 
-    }
+    let ordered = measures.sort((a,b)=>{
 
-    return closest;
+
+         if(a.assignature < b.assignature){
+             return -1;
+         }
+         if(a.assignature > b.assignature){
+             return  1;
+         }
+         return 0;
+    })
+
+    return  ordered[0];
+
 }
 
