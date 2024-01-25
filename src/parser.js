@@ -1,6 +1,6 @@
 /**
  * @typedef AbsolutePositionDimension
- * @property {boolean} same
+ * @property {boolean} last
  * @property {number} value
  * @property {string} measure
  * @property {string} operator
@@ -70,7 +70,7 @@ function absolute_position_generate_divided_number(value){
         throw new AbsolutePositionError(ABSOLUTE_POSITION_ARGS_NOT_PASSED);
     }
     if(value === ABSOLUTE_POSITION_LAST){
-        return {same:true};
+        return {last:true};
     }
 
 
@@ -133,7 +133,7 @@ function absolute_position_generate_divided_number(value){
     }
 
     return {
-        same:false,
+        last:false,
         measure:dimensions,
         value:num,
         operator:operator

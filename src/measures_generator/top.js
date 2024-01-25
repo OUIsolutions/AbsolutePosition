@@ -35,7 +35,7 @@ function  absolute_position_generate_top_measures(
         }
     }
 
-    if(current_measure.same){
+    if(current_measure.last){
         element.style[ABSOLUTE_POSITION_TOP] = previews_top +ABSOLUTE_POSITION_PX;
         return;
     }

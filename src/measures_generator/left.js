@@ -36,7 +36,7 @@ function  absolute_position_generate_left_measures(
         }
 
     }
-    if(current_measure.same){
+    if(current_measure.last){
 
         element.style[ABSOLUTE_POSITION_LEFT] = previews_left +ABSOLUTE_POSITION_PX;
         return;

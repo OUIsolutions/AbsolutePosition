@@ -28,7 +28,7 @@ function  absolute_position_generate_width_measures(
         previews_width = previews_rect[ABSOLUTE_POSITION_WIDTH];
     }
 
-    if(current_measure.same){
+    if(current_measure.last){
         element.style[ABSOLUTE_POSITION_WIDTH] = previews_width +ABSOLUTE_POSITION_PX;
         return;
     }
