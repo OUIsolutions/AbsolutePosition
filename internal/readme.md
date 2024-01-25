@@ -84,7 +84,8 @@ With the % prop, you can centralize or position  an element in every part you wa
 
 #### Mod Operator
 With the mod operator:**%**  we can determine diferents behaviors based on current iteration
-of , allowing simulate flexbox behavior
+of the element, allowing simulate flexbox behavior,for example, if %3 means every time its a multiple of 
+3(0,3,6,9,12) , it will put that measures instead of default measures.
 
 #ref:mod.html
 
