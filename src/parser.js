@@ -19,6 +19,7 @@
  * @typedef {object} AbsolutePositionProp
  * @property {number} horizontal_ratio
  * @property {number} vertical_ratio
+ * @property {number} mod
  * @property {AbsolutePositionDimensions} dimensions
  * */
 
@@ -27,17 +28,25 @@
  * @param {Array} element
  * @param {number} horizontal_ratio
  * @param {number} vertical_ratio
+ @param {number} mod
  * @return {AbsolutePositionProp}
  * */
-function absolute_position_find_or_create_dimension(element, horizontal_ratio, vertical_ratio){
+function absolute_position_find_or_create_dimension(
+    element,
+    horizontal_ratio,
+    vertical_ratio,
+    mod,
+
+){
     for(let current of element){
-        if(current.width === horizontal_ratio && current.height === vertical_ratio){
+        if(current.width === horizontal_ratio && current.height === vertical_ratio && current.mod  === mod){
             return current;
         }
     }
     let created = {
         horizontal_ratio:horizontal_ratio,
         vertical_ratio:vertical_ratio,
+        mod:mod,
         dimensions:undefined
     };
 
@@ -142,7 +151,15 @@ function  absolute_position_generate_measure(final_array, current){
     }
 
 
+
     let dimensions_raw = division[0];
+    let mod = undefined;
+    if(dimensions_raw.includes('%')){
+        let sub_division = dimensions_raw.split('%');
+        dimensions_raw = sub_division[0];
+        mod = Number(sub_division[1]);
+    }
+    
     let divided_dimensions = dimensions_raw.split(ABSOLUTE_POSITION_ASPECT_RATION_SEPARATOR);
 
     let  horizontal_ration = window.innerWidth;
@@ -152,6 +169,7 @@ function  absolute_position_generate_measure(final_array, current){
         horizontal_ration = Number(divided_dimensions[0]);
         vertical_ratio = Number(divided_dimensions[1]);
     }
+
 
     let numbers = division[1];
     numbers = numbers
@@ -170,7 +188,13 @@ function  absolute_position_generate_measure(final_array, current){
     let width =absolute_position_generate_divided_number(divided_numbers[2]);
     let height =absolute_position_generate_divided_number(divided_numbers[3])
 
-    let created = absolute_position_find_or_create_dimension(final_array,horizontal_ration,vertical_ratio);
+    let created = absolute_position_find_or_create_dimension(
+        final_array,
+        horizontal_ration,
+        vertical_ratio,
+        mod
+    );
+
     created.dimensions = {
         left:left,
         top:top,
