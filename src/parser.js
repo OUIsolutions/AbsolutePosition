@@ -159,7 +159,7 @@ function  absolute_position_generate_measure(final_array, current){
         dimensions_raw = sub_division[0];
         mod = Number(sub_division[1]);
     }
-    
+
     let divided_dimensions = dimensions_raw.split(ABSOLUTE_POSITION_ASPECT_RATION_SEPARATOR);
 
     let  horizontal_ration = window.innerWidth;

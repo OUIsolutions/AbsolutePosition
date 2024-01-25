@@ -20,7 +20,11 @@ function absolute_position_processElements() {
                         return;
                 }
 
-                let closest = absolute_position_find_closest_measure(measures,browser_width,browser_height);
+                let closest = absolute_position_find_closest_measure(
+                    measures,
+                    browser_width,
+                    browser_height
+                );
 
                 let father = absolute_position_find_father(element);
                 let father_rect = father.getBoundingClientRect();

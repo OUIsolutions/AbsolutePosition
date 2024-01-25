@@ -45,116 +45,44 @@ function absolute_position_returns_difference(element1, element2){
  * @param {Array<AbsolutePositionProp>} measures
  * @param {number}browser_width
  * @param {number}browser_height
+ * @param {number || undefined} total_previews
  * @return {AbsolutePositionProp}
  * **/
-function absolute_position_find_closest_measure(measures, browser_width, browser_height) {
+function absolute_position_find_closest_measure(
+    measures,
+    browser_width,
+    browser_height,
+    total_previews
+) {
     let closest = undefined;
     let closest_dif = undefined;
     let browser_ratio = absolute_position_convert_aspect_ratio(browser_width, browser_height);
+
     for(let measure of measures){
         let measure_ratio = absolute_position_convert_aspect_ratio(measure.horizontal_ratio, measure.vertical_ratio);
         let width_dif = absolute_position_returns_difference(measure_ratio.width,browser_ratio.width);
         let highest_dif = absolute_position_returns_difference(measure_ratio.height,browser_ratio.height);
         let dif = width_dif+highest_dif;
+
         if(closest_dif=== undefined){
             closest = measure;
             closest_dif = dif;
         }
+        if(dif === closest_dif && total_previews && measure.mod){
+            if(total_previews % measure.mod === 0){
+                closest = measure;
+                closest_dif = dif;
+            }
+        }
 
-        if(dif <= closest_dif){
+        if(dif < closest_dif){
             closest = measure;
             closest_dif = dif;
         }
+
 
     }
 
     return closest;
 }
 
-/**
- * @param {HTMLElement} element
- * */
-function absolute_position_find_father(element){
-    /**@type {HTMLElement}*/
-    let father = element.parentElement;
-
-    while(father){
-
-        if(father === document.body){
-            break;
-        }
-
-        if(father.hasAttribute(ABSOLUTE_POSITION_ATTRIBUTE)){
-            if(father.style.display !== 'none'){
-                break;
-            }
-        }
-
-
-        father = father.parentElement;
-
-    }
-
-    return father;
-}
-
-/**
- * @param {HTMLElement} element
- * */
-function  absolute_position_retrive_element_or_child_if_is_aposition(element){
-
-    if(element.style.display === 'none'){
-        return undefined;
-    }
-
-    if(element.hasAttribute(ABSOLUTE_POSITION_ATTRIBUTE)){
-        return  element;
-    }
-
-    for(let i = 0; i < element.children.length;i++){
-      let current =  element.children[i];
-
-      let result =absolute_position_retrive_element_or_child_if_is_aposition(current);
-      if(result){
-          return  result;
-      }
-    }
-}
-
-/**
- * @param {HTMLElement} element
- * @return {HTMLElement || undefined}
- * */
-function absolute_position_find_previews_element(element){
-    /**@type {HTMLElement}*/
-    let previews =element;
-    let father = absolute_position_find_father(element);
-    while(previews){
-
-        if(previews === document.body){
-            return  undefined;
-        }
-
-        if(previews === father){
-            return  undefined;
-        }
-
-
-        let possible_previews = previews.previousElementSibling;
-
-        if(!possible_previews){
-            previews = previews.parentElement;
-            continue;
-        }
-
-        previews = possible_previews;
-        let possible = absolute_position_retrive_element_or_child_if_is_aposition(
-            previews
-        );
-        if(possible){
-            return  possible;
-        }
-
-    }
-
-}
