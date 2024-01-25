@@ -52,8 +52,9 @@ function  absolute_position_generate_top_measures(
 
     if(operator === ABSOLUTE_POSITION_OPERATOR_MIN){
         let current_size = element.getBoundingClientRect();
-        pixel_value = pixel_value - (previews_top -current_size[ABSOLUTE_POSITION_TOP]);
+        pixel_value = pixel_value - (previews_top -current_size[ABSOLUTE_POSITION_HEIGHT]);
         pixel_value = Math.abs(pixel_value);
+
     }
 
 

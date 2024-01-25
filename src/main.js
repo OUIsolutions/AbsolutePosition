@@ -92,11 +92,13 @@ function absolute_position_processElements() {
 function  absolute_position_start(){
         absolute_position_processElements();
         //set an  listener for change dimensions
+        setInterval(absolute_position_processElements,100);
+        /*
         window.addEventListener(ABSOLUTE_POSITION_RESIZE, absolute_position_processElements);
         const observer = new MutationObserver(absolute_position_processElements);
         const config = { childList: true, subtree: true };
         observer.observe(document, config);
-
+        */
 }
 
 //add an document listener for window laod 
