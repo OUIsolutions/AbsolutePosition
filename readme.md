@@ -37,10 +37,15 @@ these it's the example  of a simple div
 
 </head>
 <body>
-        <div  APosition="$16:9(50px,100px,200px,300px)" style="background-color: red;">
+<div class="APositionStart"
 
-            Hello World
-        </div>
+
+<div  APosition="$16:9(50px,100px,200px,300px)" style="background-color: red;">
+
+    Hello World
+</div>
+></div>
+
 </body>
 </html>
 ```
@@ -81,11 +86,13 @@ As you can See the + operator increments 100px the value left of each div
 
 </head>
 <body>
+<div class="APositionStart">
+    <div  APosition="$16:9(00px,100px,100px,100px)" style="background-color: red;"></div>
+    <div  APosition="$16:9(+10px,last,last,last)" style="background-color: blue;"></div>
+    <div  APosition="$16:9(+10px,last,last,last)" style="background-color: red;"></div>
+    <div  APosition="$16:9(+10px,last,last,last)" style="background-color: blue;"></div>
 
-<div  APosition="$16:9(00px,100px,100px,100px)" style="background-color: red;"></div>
-<div  APosition="$16:9(+10px,last,last,last)" style="background-color: blue;"></div>
-<div  APosition="$16:9(+10px,last,last,last)" style="background-color: red;"></div>
-<div  APosition="$16:9(+10px,last,last,last)" style="background-color: blue;"></div>
+</div>
 
 </body>
 </html>
@@ -106,10 +113,14 @@ As you can See the + operator increments 100px the value left of each div
 
 </head>
 <body>
-<div  APosition="$16:9(0px,00px,100px,100px)" style="background-color: red;"></div>
-<div  APosition="$16:9(last,+10px,last,last)" style="background-color: blue;"></div>
-<div  APosition="$16:9(last,+10px,last,last)" style="background-color: red;"></div>
-<div  APosition="$16:9(last,+10px,last,last)" style="background-color: blue;"></div>
+<div class="APositionStart">
+
+    <div  APosition="$16:9(0px,00px,100px,100px)" style="background-color: red;"></div>
+    <div  APosition="$16:9(last,+10px,last,last)" style="background-color: blue;"></div>
+    <div  APosition="$16:9(last,+10px,last,last)" style="background-color: red;"></div>
+    <div  APosition="$16:9(last,+10px,last,last)" style="background-color: blue;"></div>
+
+</div>
 
 </body>
 </html>
@@ -134,11 +145,16 @@ by using the **-** operators
 
 </head>
 <body>
-<div  APosition="$16:9(800px,100px,100px,100px)" style="background-color: red;"></div>
-<div  APosition="$16:9(-10px,last,last,last)" style="background-color: blue;"></div>
-<div  APosition="$16:9(-10px,last,last,last)" style="background-color: red;"></div>
-<div  APosition="$16:9(-10px,last,last,last)" style="background-color: blue;"></div>
 
+<div class="APositionStart">
+
+    <div  APosition="$16:9(800px,100px,100px,100px)" style="background-color: red;"></div>
+    <div  APosition="$16:9(-10px,last,last,last)" style="background-color: blue;"></div>
+    <div  APosition="$16:9(-10px,last,last,last)" style="background-color: red;"></div>
+    <div  APosition="$16:9(-10px,last,last,last)" style="background-color: blue;"></div>
+
+
+</div>
 
 
 
@@ -168,11 +184,16 @@ With the % prop, you can centralize or position  an element in every part you wa
 
 </head>
 <body>
-        <div  APosition="$16:9(200px,200px,200px,200px)" style="background-color: red;">
-            <div  APosition="$16:9(0%,33.3%,100%,33.3%)" style="background-color: blue;">
-            </div>
+<div class="APositionStart" >
 
+    <div  APosition="$16:9(200px,200px,200px,200px)" style="background-color: red;">
+        <div  APosition="$16:9(0%,33.3%,100%,33.3%)" style="background-color: blue;">
         </div>
+
+    </div>
+
+</div>
+
 </body>
 </html>
 ```
@@ -192,11 +213,16 @@ With the % prop, you can centralize or position  an element in every part you wa
 
 </head>
 <body>
-        <div  APosition="$16:9(200px,200px,200px,200px)" style="background-color: red;">
-            <div  APosition="$16:9(33.3%,0%,33.3%,100%)" style="background-color: blue;">
-            </div>
 
+        <div class="APositionStart">
+
+            <div  APosition="$16:9(200px,200px,200px,200px)" style="background-color: red;">
+                <div  APosition="$16:9(33.3%,0%,33.3%,100%)" style="background-color: blue;">
+                </div>
+
+            </div>
         </div>
+
 </body>
 </html>
 ```
@@ -223,7 +249,7 @@ of the element, allowing simulate flexbox behavior,for example, if %3 means ever
 
 </head>
 <body>
-<div APosition="$(0,0,100vw,100vh)">
+<div class="APositionStart">
     <div  APosition="$16:9 %3(10%,+10%,20%,15%) $16:9 (+10%,last,last,last)" style="background-color: red"></div>
     <div  APosition="$16:9 %3(10%,+10%,last,last) $16:9 (+10%,last,last,last)" style="background-color: red"></div>
     <div  APosition="$16:9 %3(10%,+10%,last,last) $16:9 (+10%,last,last,last)" style="background-color: red"></div>
@@ -260,11 +286,14 @@ these it's useful when you want to avoid code repetition
 <body>
 
 <script>APosition_define_macro("test","+100px,100px,100px,100px")</script>
+<div class="APositionStart">
 
-<div  APosition="$16:9(00px,100px,100px,100px)" style="background-color: red;"></div>
-<div  APosition="$16:9(test)" style="background-color: blue;"></div>
-<div  APosition="$16:9(test)" style="background-color: red;"></div>
-<div  APosition="$16:9(test)" style="background-color: blue;"></div>
+    <div  APosition="$16:9(00px,100px,100px,100px)" style="background-color: red;"></div>
+    <div  APosition="$16:9(test)" style="background-color: blue;"></div>
+    <div  APosition="$16:9(test)" style="background-color: red;"></div>
+    <div  APosition="$16:9(test)" style="background-color: blue;"></div>
+
+</div>
 
 </body>
 </html>
@@ -283,11 +312,14 @@ these it's useful when you want to avoid code repetition
     <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.73.js"></script>
 </head>
 <body>
+<div class="APositionStart" >
+
         <div  APosition="$16:9(200px,200px,200px,200px)" style="background-color: red;">
             <div  APosition="$16:9(33.3%,33.3%,33.3%,33.3%)" style="background-color: #0033ff;">
             </div>
 
         </div>
+</div>
 </body>
 </html>
 ```
@@ -332,11 +364,14 @@ to false
         <script>
             absolute_position_show_errors = false;
         </script>
+        <div class="APositionStart" >
+            <div  APosition="$16:9ddpx,100px,200px,300px)" style="background-color: red;">
 
-        <div  APosition="$16:9ddpx,100px,200px,300px)" style="background-color: red;">
-
-            Hello World
+                Hello World
+            </div>
         </div>
+
+
 </body>
 </html>
 ```
