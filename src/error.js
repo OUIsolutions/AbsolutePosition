@@ -1,3 +1,22 @@
+
+
+let absolute_position_logged_errors = [];
+
+/**
+ * @param {HTMLElement || string} error
+ * */
+function absolute_position_log_error(error){
+
+    let signature = String(error);
+    if(absolute_position_logged_errors.includes(signature)){
+        return;
+    }
+    absolute_position_logged_errors.push(signature);
+    console.log(error);
+
+}
+
+
 let absolute_position_show_errors =true;
 
 class AbsolutePositionError extends Error {
@@ -8,8 +27,8 @@ class AbsolutePositionError extends Error {
     /**@param {HTMLElement} element*/
     show_error(element){
         if(absolute_position_show_errors){
-            console.log(this.message)
-            console.log(element)
+            absolute_position_log_error(this.message)
+            absolute_position_log_error(element)
         }
     }
 

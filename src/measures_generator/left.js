@@ -60,8 +60,8 @@ function  absolute_position_generate_left_measures(
         let current_size = element.getBoundingClientRect();
         pixel_value = pixel_value - (previews_left -current_size[ABSOLUTE_POSITION_WIDTH]);
         pixel_value = Math.abs(pixel_value);
-
     }
+
 
     element.style[ABSOLUTE_POSITION_LEFT] = pixel_value + ABSOLUTE_POSITION_PX ;
 
