@@ -87,11 +87,18 @@ function absolute_position_processElements() {
 
 }
 
+function  absolute_position_show_root_divs(){
+        let roots = document.getElementsByClassName(ABSOLUTE_POSITION_START);
+        for(let root of roots){
+                root.style.display = ABSOLUTE_POSITION_SHOW;
+        }
+}
 
 function  absolute_position_start(){
         absolute_position_processElements();
-        //set an  listener for change dimensions
+        absolute_position_show_root_divs();
         setInterval(absolute_position_processElements,100);
+
 }
 
 //add an document listener for window laod 

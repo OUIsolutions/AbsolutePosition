@@ -5,6 +5,7 @@ from os import makedirs
 
 SOURCES = [
     'src/constants.js',
+    'src/globals.js',
      'src/error.js',
     'src/algo.js',
      'src/element_finding.js',

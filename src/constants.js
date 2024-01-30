@@ -14,7 +14,8 @@ const ABSOLUTE_POSITION_BREAK_LINE = '\n'
 
 const ABSOLUTE_POSITION_LAST = 'last';
 const  ABSOLUTE_POSITION_VALID_NUMS = ['.','0','1','2','3','4','5','6','7','8','9'];
-
+const ABSOLUTE_POSITION_START = 'APositionStart';
+const ABSOLUTE_POSITION_SHOW = 'block';
 const ABSOLUTE_POSITION_ASPECT_RATION_SEPARATOR = ':'
 //directions
 const ABSOLUTE_POSITION_LEFT = 'left';

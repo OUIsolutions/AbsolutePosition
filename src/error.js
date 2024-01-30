@@ -1,6 +1,5 @@
 
 
-let absolute_position_logged_errors = [];
 
 /**
  * @param {HTMLElement || string} error
@@ -17,7 +16,6 @@ function absolute_position_log_error(error){
 }
 
 
-let absolute_position_show_errors =true;
 
 class AbsolutePositionError extends Error {
     constructor(message = "",) {
