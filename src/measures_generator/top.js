@@ -48,7 +48,6 @@ function  absolute_position_generate_top_measures(
         browser_width,
         browser_height
     );
-
     //get the width of the brother
     if(operator === ABSOLUTE_POSITION_OPERATOR_PLUS ){
         pixel_value += previews_top + previews_height;

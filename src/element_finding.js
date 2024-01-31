@@ -11,15 +11,18 @@ function absolute_position_find_father(element){
             break;
         }
 
+        // If the father element has the class "APositionStart", break the loop
+        if(father.classList.contains('APositionStart')){
+            break;
+        }
+
         if(father.hasAttribute(ABSOLUTE_POSITION_ATTRIBUTE)){
             if(father.style.display !== 'none'){
                 break;
             }
         }
 
-
         father = father.parentElement;
-
     }
 
     return father;
@@ -37,6 +40,7 @@ function  absolute_position_retrive_element_or_child_if_is_aposition(element){
     if(element.hasAttribute(ABSOLUTE_POSITION_ATTRIBUTE)){
         return  element;
     }
+
 
     for(let i = 0; i < element.children.length;i++){
         let current =  element.children[i];

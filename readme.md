@@ -6,7 +6,7 @@ elements on the screen in an extremely easy way.
 for running , you just need to put the cdn script tag into your project.:
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/style/AbsolutePosition_v0.2.css">
-<script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.74.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.75.js"></script>
 
 ```
 
@@ -33,7 +33,7 @@ these it's the example  of a simple div
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/style/AbsolutePosition_v0.2.css">
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.74.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.75.js"></script>
 
 </head>
 <body>
@@ -82,7 +82,7 @@ As you can See the + operator increments 100px the value left of each div
     <title>Document</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/style/AbsolutePosition_v0.2.css">
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.74.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.75.js"></script>
 
 </head>
 <body>
@@ -109,7 +109,7 @@ As you can See the + operator increments 100px the value left of each div
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/style/AbsolutePosition_v0.2.css">
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.74.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.75.js"></script>
 
 </head>
 <body>
@@ -141,7 +141,7 @@ by using the **-** operators
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/style/AbsolutePosition_v0.2.css">
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.74.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.75.js"></script>
 
 </head>
 <body>
@@ -180,7 +180,7 @@ With the % prop, you can centralize or position  an element in every part you wa
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/style/AbsolutePosition_v0.2.css">
 
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.74.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.75.js"></script>
 
 </head>
 <body>
@@ -209,7 +209,7 @@ With the % prop, you can centralize or position  an element in every part you wa
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/style/AbsolutePosition_v0.2.css">
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.74.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.75.js"></script>
 
 </head>
 <body>
@@ -245,7 +245,7 @@ of the element, allowing simulate flexbox behavior,for example, if %3 means ever
     <title>Document</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/style/AbsolutePosition_v0.2.css">
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.74.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.75.js"></script>
 
 </head>
 <body>
@@ -281,7 +281,7 @@ these it's useful when you want to avoid code repetition
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/style/AbsolutePosition_v0.2.css">
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.74.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.75.js"></script>
 </head>
 <body>
 
@@ -309,7 +309,7 @@ these it's useful when you want to avoid code repetition
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/style/AbsolutePosition_v0.2.css">
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.74.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.75.js"></script>
 </head>
 <body>
 <div class="APositionStart" >
@@ -336,7 +336,7 @@ if some error happen on some tag it will be showed on console
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/style/AbsolutePosition_v0.2.css">
 
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.74.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.75.js"></script>
 </head>
 <body>
         <div  APosition="$16:9ddpx,100px,200px,300px)" style="background-color: red;">
@@ -361,7 +361,7 @@ to false
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/style/AbsolutePosition_v0.2.css">
 
-    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.74.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/OUIsolutions/AbsolutePosition@main/versions/AbsolutePosition_v0.75.js"></script>
 </head>
 <body>
 
