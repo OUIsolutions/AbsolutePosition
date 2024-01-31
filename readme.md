@@ -37,14 +37,14 @@ these it's the example  of a simple div
 
 </head>
 <body>
-<div class="APositionStart"
+<div class="APositionStart">
 
 
 <div  APosition="$16:9(50px,100px,200px,300px)" style="background-color: red;">
 
     Hello World
 </div>
-></div>
+</div>
 
 </body>
 </html>
